@@ -50,7 +50,7 @@ export function TabsSection() {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full space-y-24">
+      <div className="w-full space-y-24 ">
         <nav className="flex flex-row justify-center">
           <div className="bg-[var(--tabs-shared-bg)] rounded-[var(--tabs-shared-radius)] border border-[var(--tabs-shared-border)] p-0.5 relative flex">
             {tabs.map((tab) => (
@@ -58,8 +58,8 @@ export function TabsSection() {
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
                 className={`relative rounded-[var(--tabs-active-shared-radius)] text-base font-medium px-4 py-2
-                  ${selectedTab.id === tab.id 
-                    ? 'text-[var(--tabs-active-state-default-label)]' 
+                  ${selectedTab.id === tab.id
+                    ? 'text-[var(--tabs-active-state-default-label)]'
                     : 'text-[var(--tabs-normal-state-default-label)] hover:text-[var(--tabs-normal-state-hovered-label)]'
                   }`}
               >
