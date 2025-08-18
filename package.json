@@ -10,9 +10,11 @@
     "build:tokens": "node build.js"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.539.0",
     "material-symbols": "^0.34.1",
     "next": "15.4.6",

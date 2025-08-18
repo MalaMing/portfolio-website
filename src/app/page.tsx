@@ -4,9 +4,12 @@ import { Header } from "@/components/font-style/Header";
 import { NeonHeader } from "@/components/font-style/NeonHeader";
 import NeonText from "@/components/font-style/NeonText";
 import { SubHeader } from "@/components/font-style/SubHeader";
+import { UXUIGroup } from "@/components/group/UXUI-group";
 import { EducationExperience} from "@/components/section/EducationExperience";
 import { WorkExperience } from "@/components/section/WorkExperience";
+import { SquareCard } from "@/components/SquareCard";
 import { TabsSection } from "@/components/Tabs";
+import { Square } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -70,6 +73,10 @@ export default function Home() {
       <div className="flex flex-col gap-4">
         <SubHeader text = "Coding" />
         <TabsSection />
+      </div>
+      <div className="flex flex-col gap-12">
+        <SubHeader text = "UX/UI" />
+        <UXUIGroup/>
       </div>
     </div>
         </div>
