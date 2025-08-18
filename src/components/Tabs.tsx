@@ -1,64 +1,100 @@
-import * as Tabs from "@radix-ui/react-tabs";
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { TabsItem } from "./content/TabsContent";
-import { Button } from "./Button";
+
+const tabs = [
+  {
+    id: "Computer Languages",
+    content: [
+      { icon: "icon-[carbon--logo-python]", label: "Python" },
+      { icon: "icon-[simple-icons--javascript]", label: "JavaScript" },
+      { icon: "icon-[simple-icons--typescript]", label: "TypeScript" },
+      { icon: "icon-[simple-icons--html5]", label: "HTML" },
+      { icon: "icon-[simple-icons--css3]", label: "CSS" },
+      { icon: "icon-[ri--java-fill]", label: "Java" },
+      { icon: "icon-[streamline-logos--c-language-logo-solid]", label: "C" },
+      { icon: "icon-[streamline-logos--c-plus-language-logo-solid]", label: "C++" },
+      { icon: "icon-[tabler--sql]", label: "SQL" },
+      { icon: "icon-[lineicons--go]", label: "GO" }
+    ]
+  },
+  {
+    id: "Frameworks",
+    content: [
+      { icon: "icon-[devicon--nextjs]", label: "Next.js" },
+      { icon: "icon-[mdi--react]", label: "React Native" },
+      { icon: "icon-[mdi--react]", label: "React.js" },
+      { icon: "icon-[ri--java-fill]", label: "JavaFX" },
+      { icon: "icon-[lineicons--go]", label: "GO Fiber" },
+      { icon: "icon-[simple-icons--spring]", label: "Spring Boot" }
+    ]
+  },
+  {
+    id: "Tools",
+    content: [
+      { icon: "icon-[solar--figma-bold-duotone]", label: "Figma" },
+      { icon: "icon-[lineicons--canva]", label: "Canva" },
+      { icon: "icon-[simple-icons--googlecolab]", label: "Google Colab" },
+      { icon: "icon-[mdi--git]", label: "Git" },
+      { icon: "icon-[lineicons--mysql]", label: "MySQL" },
+      { icon: "icon-[lineicons--postman]", label: "Postman" },
+      { icon: "icon-[lineicons--xampp]", label: "xampp" }
+    ]
+  }
+];
 
 export function TabsSection() {
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
   return (
     <div className="flex w-full justify-center">
-      <Tabs.Root className="w-full space-y-24" defaultValue="Computer Languages">
-        <Tabs.List className="flex flex-row justify-center">
-          <div className="bg-[var(--tabs-shared-bg)] rounded-[var(--tabs-shared-radius)] border border-[var(--tabs-shared-border) p-0.5">
-            {["Computer Languages", "Frameworks", "Tools"].map((tab) => (
-              <Tabs.Trigger
-                key={tab}
-                value={tab}
-                className="rounded-[var(--tabs-active-shared-radius)] text-base font-medium transition-colors
-              data-[state=active]:bg-[var(--tabs-active-state-default-bg)]
-              data-[state=active]:text-[var(--tabs-active-state-default-label)]
-              data-[state=inactive]:bg-transparent
-              data-[state=inactive]:text-[var(--tabs-normal-state-default-label)]
-              data-[state=inactive]:hover:text-[var(--tabs-normal-state-hovered-label)]
-              focus:outline-none px-4 py-2"
+      <div className="w-full space-y-24">
+        <nav className="flex flex-row justify-center">
+          <div className="bg-[var(--tabs-shared-bg)] rounded-[var(--tabs-shared-radius)] border border-[var(--tabs-shared-border)] p-0.5 relative flex">
+            {tabs.map((tab) => (
+              <motion.button
+                key={tab.id}
+                onClick={() => setSelectedTab(tab)}
+                className={`relative rounded-[var(--tabs-active-shared-radius)] text-base font-medium px-4 py-2
+                  ${selectedTab.id === tab.id 
+                    ? 'text-[var(--tabs-active-state-default-label)]' 
+                    : 'text-[var(--tabs-normal-state-default-label)] hover:text-[var(--tabs-normal-state-hovered-label)]'
+                  }`}
               >
-                {tab}
-              </Tabs.Trigger>
+                {selectedTab.id === tab.id && (
+                  <motion.div
+                    className="absolute inset-0 bg-[var(--tabs-active-state-default-bg)] rounded-[var(--tabs-active-shared-radius)]"
+                    layoutId="active"
+                    transition={{
+                      type: "spring",
+                      stiffness: 320,
+                      damping: 30
+                    }}
+                  />
+                )}
+                <span className="relative z-10">{tab.id}</span>
+              </motion.button>
             ))}
           </div>
-        </Tabs.List>
+        </nav>
 
-        {/* Content เต็มหน้าจอ */}
-        <Tabs.Content className="w-full grid grid-cols-3 space-y-14 " value="Computer Languages">
-            <TabsItem icon="icon-[carbon--logo-python]" label="Python" />
-            <TabsItem icon="icon-[simple-icons--javascript]" label="JavaScript" />
-            <TabsItem icon="icon-[simple-icons--typescript]" label="TypeScript" />
-            <TabsItem icon="icon-[simple-icons--html5]" label="HTML" />
-            <TabsItem icon="icon-[simple-icons--css3]" label="CSS" />
-            <TabsItem icon="icon-[ri--java-fill]" label="Java" />
-            <TabsItem icon="icon-[streamline-logos--c-language-logo-solid]" label="C" />
-            <TabsItem icon="icon-[streamline-logos--c-plus-language-logo-solid]" label="C++" />
-            <TabsItem icon="icon-[tabler--sql]" label="SQL" />
-            <TabsItem icon="icon-[lineicons--go]" label="GO" />
-        </Tabs.Content>
-
-        <Tabs.Content className="w-full grid grid-cols-3 space-y-14" value="Frameworks">
-             <TabsItem icon="icon-[devicon--nextjs]" label="Next.js" />
-            <TabsItem icon="icon-[mdi--react]" label="React Native" />
-            <TabsItem icon="icon-[mdi--react]" label="React.js" />
-            <TabsItem icon="icon-[ri--java-fill]" label="JavaFX" />
-            <TabsItem icon="icon-[lineicons--go]" label="GO Fiber" />
-            <TabsItem icon="icon-[simple-icons--spring]" label="Spring Boot" />
-        </Tabs.Content>
-
-        <Tabs.Content className="w-full grid grid-cols-3 space-y-14" value="Tools">
-           <TabsItem icon="icon-[solar--figma-bold-duotone]" label="Figma" />
-            <TabsItem icon="icon-[lineicons--canva]" label="Canva" />
-            <TabsItem icon="icon-[simple-icons--googlecolab]" label="Google Colab" />
-            <TabsItem icon="icon-[mdi--git]" label="Git" />
-            <TabsItem icon="icon-[lineicons--mysql]" label="MySQL" />
-            <TabsItem icon="icon-[lineicons--postman]" label="Postman" />
-            <TabsItem icon="icon-[lineicons--xampp]" label="xampp" />
-        </Tabs.Content>
-      </Tabs.Root>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedTab.id}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="w-full grid grid-cols-3 gap-14 max-w-[1040px] mx-auto"
+          >
+            {selectedTab.content.map((item, index) => (
+              <TabsItem key={index} icon={item.icon} label={item.label} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

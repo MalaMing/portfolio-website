@@ -11,27 +11,27 @@ export function UXUIGroup() {
 
   const cards = [
     {
-      icon: "design_services",
+      icon: "search_insights",
       title: "Research & UX",
       body: "User research, experience mapping, and information architecture for optimal usability.",
     },
     {
-      icon: "design_services",
+      icon: "draw_abstract",
       title: "Design System",
       body: "Created Figma design tokens for spacing, color, typography, border, and radius to speed up workflow and ease dev handoff.",
     },
     {
-      icon: "design_services",
+      icon: "palette",
       title: "Visual Design",
       body: "Designed wireframes (low–hi-fi) and maintained scalable Figma components for consistency and speed.",
     },
     {
-      icon: "design_services",
+      icon: "linked_services",
       title: "Prototyping",
       body: "Prototyping with clear user flows and intuitive layouts.",
     },
     {
-      icon: "design_services",
+      icon: "asterisk",
       title: "Technical & Handoff Skills",
       body: "Design-to-code handoff with Figma tokens and basic front-end skills (HTML, CSS, JS).",
     },
