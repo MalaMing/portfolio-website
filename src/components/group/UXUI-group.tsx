@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SquareCard } from "../SquareCard";
+import { SlideButton } from "../SlideButton";
 
 export function UXUIGroup() {
   const [isWide, setIsWide] = useState(false);
@@ -40,11 +41,6 @@ export function UXUIGroup() {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsWide(width > 2100);
-      
-      // Determine number of visible cards based on screen width
-      if (width >= 1536) setVisibleCards(3);      // xl breakpoint
-      else if (width >= 1024) setVisibleCards(2); // lg breakpoint
-      else setVisibleCards(1);                    // mobile
     };
     
     handleResize();
@@ -65,7 +61,7 @@ export function UXUIGroup() {
   if (isWide) {
     // ใช้ flex ปกติเมื่อหน้าจอกว้างกว่า 2100px
     return (
-      <div className="flex flex-row gap-6 flex-wrap">
+      <div className="flex flex-row gap-6">
         {cards.map((c, i) => (
           <SquareCard key={i} {...c} />
         ))}
@@ -93,21 +89,17 @@ export function UXUIGroup() {
       </div>
 
       {/* ปุ่มเลื่อน */}
-      <div className="flex justify-end gap-2">
-        <button
+      <div className="flex justify-end gap-6">
+        <SlideButton
+          icon="chevron_left"
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          className="bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          ◀
-        </button>
-        <button
+        />
+        <SlideButton
+          icon="chevron_right"
           onClick={handleNext}
           disabled={currentIndex >= cards.length - 3}
-          className="bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          ▶
-        </button>
+        />
       </div>
     </div>
   );
