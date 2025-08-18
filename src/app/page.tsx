@@ -1,7 +1,7 @@
-"use client"; // ต้องใส่เพราะใช้ animation ฝั่ง client
+"use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import PathDrawing from "@/components/Animation";
 import { Button } from "@/components/Button";
 import { BodyText } from "@/components/font-style/Body";
@@ -19,41 +19,43 @@ export default function Home() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [showContent, setShowContent] = useState(false);
 
+  // เก็บตำแหน่งเมาส์ด้วย motion value + spring (ไม่ต้องหักค่าคงที่)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 200, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 200, damping: 20 });
+
   useEffect(() => {
-    const cursor = cursorRef.current;
-    if (!cursor) return;
-
     const onMouseMove = (e: MouseEvent) => {
-      cursor.style.top = `${e.clientY}px`;
-      cursor.style.left = `${e.clientX}px`;
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
-
     window.addEventListener("mousemove", onMouseMove);
     return () => window.removeEventListener("mousemove", onMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
-  // กำหนดเวลาให้ PathDrawing เล่น animation ก่อนค่อยโชว์เนื้อหา
+  // รอ PathDrawing จบก่อนแสดงเนื้อหา
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 4000); // 4 วินาที (ปรับได้)
+    const timer = setTimeout(() => setShowContent(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="cursor-none relative">
+    <div className="relative cursor-none ">
       {!showContent ? (
-        // Intro animation screen
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <PathDrawing />
         </div>
       ) : (
-        // เนื้อหาหลักของหน้า
         <>
+          {/* Custom Cursor - จับกลางเป๊ะด้วย top/left + translate(-50%,-50%) */}
           <motion.div
             ref={cursorRef}
-            className="fixed w-8 h-8 bg-[#2F2F38]/70 rounded-full pointer-events-none mix-blend-difference z-50"
+            className="fixed w-9 h-9 bg-[#2F2F38]/70 rounded-full pointer-events-none mix-blend-difference z-50 -translate-x-1/2 -translate-y-1/2"
+            style={{ top: springY, left: springX }}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.02 }}
           />
 
           {/* Section Home */}
@@ -66,12 +68,7 @@ export default function Home() {
           >
             <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
             <div className="flex flex-col items-center content-center gap-2">
-              <Image
-                src="/images/profile.png"
-                width={480}
-                height={480}
-                alt=""
-              />
+              <Image src="/images/profile.png" width={480} height={480} alt="" />
               <div className="flex flex-col items-center justify-center gap-10 max-w-[760px]">
                 <BodyText text="I’m a computer science student at Kasetsart University with a passion for UI design and front-end development." />
                 <div className="flex flex-col items-center justify-center gap-12">
@@ -106,61 +103,27 @@ export default function Home() {
                   I love creating designs that are easy to use and friendly for everyone.
                 </span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
-                  My interest started when I worked on
+                  {" "}My interest started when I worked on
                 </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  UI Design
-                </span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> UI Design</span>
+                <span className="text-[var(--shared-label-secondary)] font-medium"> for projects and</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> front-end development.</span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
-                  {" "}
-                  for projects and
+                  {" "}It helped me see how small details come together to create the bigger picture and how they impact the
                 </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  front-end development.
-                </span>
-                <span className="text-[var(--shared-label-secondary)] font-medium">
-                  {" "}
-                  It helped me see how small details come together to create the bigger picture and how they impact the
-                </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  user experience.
-                </span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> user experience.</span>
               </p>
               <p className="max-w-[450px]">
+                <span className="text-[var(--shared-label-secondary)] font-medium">I’ve learned</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> TypeScript, JavaScript, and CSS/HTML</span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
-                  I’ve learned
+                  {" "}to make my designs work for users. I’ve also worked with
                 </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  TypeScript, JavaScript, and CSS/HTML
-                </span>
-                <span className="text-[var(--shared-label-secondary)] font-medium">
-                  {" "}
-                  to make my designs work for users. I’ve also worked with
-                </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  Java for back-end development.
-                </span>
-                <span className="text-[var(--shared-label-secondary)] font-medium">
-                  {" "}
-                  My knowledge in
-                </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  UX/UI design
-                </span>
-                <span className="text-[var(--shared-label-secondary)] font-medium">
-                  {" "}
-                  helps me improve my
-                </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold">
-                  {" "}
-                  front-end skills.
-                </span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> Java for back-end development.</span>
+                <span className="text-[var(--shared-label-secondary)] font-medium"> My knowledge in</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> UX/UI design</span>
+                <span className="text-[var(--shared-label-secondary)] font-medium"> helps me improve my</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> front-end skills.</span>
               </p>
             </motion.div>
 
@@ -195,7 +158,6 @@ export default function Home() {
           >
             <Header text="Skills" />
 
-            {/* Coding */}
             <motion.div
               className="flex flex-col gap-32 "
               initial={{ opacity: 0, y: 30 }}
