@@ -84,16 +84,16 @@ export default function MinimalCircles() {
             <defs>
                 <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#FF8660" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#FF8660" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#FF8660" stopOpacity="0.7" />
                 </linearGradient>
 
                 <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#F5638A" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#F5638A" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#F5638A" stopOpacity="0.7" />
                 </linearGradient>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#7C80E9" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#7C80E9" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#7C80E9" stopOpacity="0.7" />
                 </linearGradient>
 
             </defs>

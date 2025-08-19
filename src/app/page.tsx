@@ -14,6 +14,9 @@ import { EducationExperience } from "@/components/section/EducationExperience";
 import { WorkExperience } from "@/components/section/WorkExperience";
 import { TabsSection } from "@/components/Tabs";
 import Image from "next/image";
+import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
+import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
+import { ProjectCard } from "@/components/Project-Card";
 
 export default function Home() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -41,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative cursor-none ">
+    <div className="relative ">
       {!showContent ? (
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <PathDrawing />
@@ -55,7 +58,7 @@ export default function Home() {
             style={{ top: springY, left: springX }}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.02 }}
+            transition={{ duration: 0.00 }}
           />
 
           {/* Section Home */}
@@ -175,8 +178,21 @@ export default function Home() {
               </div>
             </motion.div>
           </motion.div>
+          {/* Section Contact */}
+          <div className="flex flex-col gap-3.5 items-start px-24 py-18">
+            <HeadeSecondary 
+            text={"Projects"} />  
+            <BodyTextSecondary 
+            text = "you can see my past projects here."
+            />      
+
+            <ProjectCard />
+             </div>
+
         </>
       )}
+
+
     </div>
   );
 }
