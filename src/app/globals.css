@@ -11,8 +11,11 @@
   cursor: none !important;
 }
 
-a, button, input[type="submit"], 
-input[type="button"], select {
+a,
+button,
+input[type="submit"],
+input[type="button"],
+select {
   cursor: none !important;
 }
 
@@ -141,6 +144,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

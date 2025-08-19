@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative ">
+    <div className="relative cursor-none">
       {!showContent ? (
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <PathDrawing />
@@ -179,15 +179,22 @@ export default function Home() {
             </motion.div>
           </motion.div>
           {/* Section Contact */}
-          <div className="flex flex-col gap-3.5 items-start px-24 py-18">
-            <HeadeSecondary 
-            text={"Projects"} />  
-            <BodyTextSecondary 
-            text = "you can see my past projects here."
-            />      
-
-            <ProjectCard />
-             </div>
+          <div className="flex flex-col gap-3.5 items-start px-24 py-18 bg-[var(--bg-secondary)]">
+            <HeadeSecondary
+              text={"Projects"} />
+              <div className="flex flex-col gap-6 ">
+            <BodyTextSecondary
+              text="you can see my past projects here."
+            />
+            <ProjectCard
+              title="Project 1"
+              description="Description for Project 1"
+              coverImage="/images/projects/kanok/cover.png"
+              technologies={["React", "TypeScript"]}
+              gradientColor="purple"
+            />
+            </div>
+          </div>
 
         </>
       )}
