@@ -16,26 +16,12 @@ import { TabsSection } from "@/components/Tabs";
 import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
-import { ProjectCard } from "@/components/Project-Card";
+import { ProjectCardGroup } from "@/components/group/Project";
 
 export default function Home() {
-  const cursorRef = useRef<HTMLDivElement>(null);
   const [showContent, setShowContent] = useState(false);
 
-  // เก็บตำแหน่งเมาส์ด้วย motion value + spring (ไม่ต้องหักค่าคงที่)
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 200, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 200, damping: 20 });
-
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", onMouseMove);
-    return () => window.removeEventListener("mousemove", onMouseMove);
-  }, [mouseX, mouseY]);
+ 
 
   // รอ PathDrawing จบก่อนแสดงเนื้อหา
   useEffect(() => {
@@ -44,27 +30,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative cursor-none">
+    <div className="relative cursor-auto">
       {!showContent ? (
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
           <PathDrawing />
         </div>
       ) : (
         <>
-          {/* Custom Cursor - จับกลางเป๊ะด้วย top/left + translate(-50%,-50%) */}
-          <motion.div
-            ref={cursorRef}
-            className="fixed w-9 h-9 bg-[#2F2F38]/70 rounded-full pointer-events-none mix-blend-difference z-50 -translate-x-1/2 -translate-y-1/2"
-            style={{ top: springY, left: springX }}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.00 }}
-          />
 
           {/* Section Home */}
           <motion.div
             id="home"
-            className="flex flex-col gap-16 items-center justify-center pt-24 pb-24"
+            className="flex flex-col gap-16 items-center justify-center pt-22 pb-24 px-24"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -85,6 +62,27 @@ export default function Home() {
             </div>
           </motion.div>
 
+                    <motion.div
+            id="projects"
+              className="flex flex-col gap-32 "
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}>
+          {/* Section Projects */}
+          <motion.div
+            className="flex flex-col gap-6 px-24 py-34  bg-[var(--bg-secondary)]  align-middle "
+          >
+            <div className="flex flex-col gap-6 items-start">
+              <HeadeSecondary text={"Projects"} />
+              <BodyTextSecondary text="you can see my past projects here." />
+            </div>
+            <ProjectCardGroup />
+
+            </motion.div>
+
+        </motion.div>
+
+
           {/* Section About */}
           <motion.div
             id="about"
@@ -96,14 +94,14 @@ export default function Home() {
             <Header text="About" />
 
             <motion.div
-              className="flex flex-row text-base text-start flex-wrap w-full gap-24 justify-center"
+              className="flex flex-row text-xl text-start flex-wrap w-full justify-between"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
             >
-              <p className="max-w-[450px]">
+              <p className="max-w-[650px]">
                 <span className="text-[var(--shared-label-primary)] font-semibold">
-                  I love creating designs that are easy to use and friendly for everyone.
+                  "I love creating designs that are easy to use and friendly for everyone.
                 </span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
                   {" "}My interest started when I worked on
@@ -114,10 +112,10 @@ export default function Home() {
                 <span className="text-[var(--shared-label-secondary)] font-medium">
                   {" "}It helped me see how small details come together to create the bigger picture and how they impact the
                 </span>
-                <span className="text-[var(--shared-label-primary)] font-semibold"> user experience.</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> user experience."</span>
               </p>
-              <p className="max-w-[450px]">
-                <span className="text-[var(--shared-label-secondary)] font-medium">I’ve learned</span>
+              <p className="max-w-[650px]">
+                <span className="text-[var(--shared-label-secondary)] font-medium">"I’ve learned</span>
                 <span className="text-[var(--shared-label-primary)] font-semibold"> TypeScript, JavaScript, and CSS/HTML</span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
                   {" "}to make my designs work for users. I’ve also worked with
@@ -126,7 +124,7 @@ export default function Home() {
                 <span className="text-[var(--shared-label-secondary)] font-medium"> My knowledge in</span>
                 <span className="text-[var(--shared-label-primary)] font-semibold"> UX/UI design</span>
                 <span className="text-[var(--shared-label-secondary)] font-medium"> helps me improve my</span>
-                <span className="text-[var(--shared-label-primary)] font-semibold"> front-end skills.</span>
+                <span className="text-[var(--shared-label-primary)] font-semibold"> front-end skills."</span>
               </p>
             </motion.div>
 
@@ -178,28 +176,9 @@ export default function Home() {
               </div>
             </motion.div>
           </motion.div>
-          {/* Section Contact */}
-          <div className="flex flex-col gap-3.5 items-start px-24 py-18 bg-[var(--bg-secondary)]">
-            <HeadeSecondary
-              text={"Projects"} />
-              <div className="flex flex-col gap-6 ">
-            <BodyTextSecondary
-              text="you can see my past projects here."
-            />
-            <ProjectCard
-              title="Tailor Management System Project"
-              description="Developed a custom tailoring shop management system with order tracking and customer to place their order."
-              coverImage="/images/projects/kanok/cover.png"
-              technologies={["Figma","UX/UI","React Native","Expo", "Go Fiber", "E-Commerce","Fashion", "Development"]}
-              gradientColor="/images/projects/kanok/gradient.svg"
-            />
-            </div>
-          </div>
 
-        </>
+      </>
       )}
-
-
     </div>
   );
 }

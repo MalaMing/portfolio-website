@@ -46,8 +46,8 @@ export function ProjectCard({
                 <Image
                     src={coverImage ?? "/default-cover.png"}
                     alt="Project Cover"
-                    width={305}
-                    height={302}
+                    width={405}
+                    height={402}
                     className="object-cover"
                 />
             </div>
