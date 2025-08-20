@@ -187,11 +187,11 @@ export default function Home() {
               text="you can see my past projects here."
             />
             <ProjectCard
-              title="Project 1"
-              description="Description for Project 1"
+              title="Tailor Management System Project"
+              description="Developed a custom tailoring shop management system with order tracking and customer to place their order."
               coverImage="/images/projects/kanok/cover.png"
-              technologies={["React", "TypeScript"]}
-              gradientColor="purple"
+              technologies={["Figma","UX/UI","React Native","Expo", "Go Fiber", "E-Commerce","Fashion", "Development"]}
+              gradientColor="/images/projects/kanok/gradient.svg"
             />
             </div>
           </div>
