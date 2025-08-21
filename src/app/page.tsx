@@ -99,7 +99,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
             >
-              <p className="max-w-[650px]">
+              <p className="max-w-[600px]">
                 <span className="text-[var(--shared-label-primary)] font-semibold">
                   "I love creating designs that are easy to use and friendly for everyone.
                 </span>
@@ -114,7 +114,7 @@ export default function Home() {
                 </span>
                 <span className="text-[var(--shared-label-primary)] font-semibold"> user experience."</span>
               </p>
-              <p className="max-w-[650px]">
+              <p className="max-w-[600px]">
                 <span className="text-[var(--shared-label-secondary)] font-medium">"I’ve learned</span>
                 <span className="text-[var(--shared-label-primary)] font-semibold"> TypeScript, JavaScript, and CSS/HTML</span>
                 <span className="text-[var(--shared-label-secondary)] font-medium">
