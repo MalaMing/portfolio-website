@@ -17,11 +17,12 @@ import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
 import { ProjectCardGroup } from "@/components/group/Project";
+import { Footer } from "@/components/section/footer";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
 
- 
+
 
   // รอ PathDrawing จบก่อนแสดงเนื้อหา
   useEffect(() => {
@@ -62,25 +63,25 @@ export default function Home() {
             </div>
           </motion.div>
 
-                    <motion.div
-            id="projects"
-              className="flex flex-col gap-32 "
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}>
-          {/* Section Projects */}
           <motion.div
-            className="flex flex-col gap-6 px-24 py-34  bg-[var(--bg-secondary)]  align-middle "
-          >
-            <div className="flex flex-col gap-6 items-start">
-              <HeadeSecondary text={"Projects"} />
-              <BodyTextSecondary text="you can see my past projects here." />
-            </div>
-            <ProjectCardGroup />
+            id="projects"
+            className="flex flex-col gap-32 "
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}>
+            {/* Section Projects */}
+            <motion.div
+              className="flex flex-col gap-6 px-24 py-34  bg-[var(--bg-secondary)]  align-middle "
+            >
+              <div className="flex flex-col gap-6 items-start">
+                <HeadeSecondary text={"Projects"} />
+                <BodyTextSecondary text="you can see my past projects here." />
+              </div>
+              <ProjectCardGroup />
 
             </motion.div>
 
-        </motion.div>
+          </motion.div>
 
 
           {/* Section About */}
@@ -177,7 +178,15 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-      </>
+
+          <div className="flex flex-col px-24 py-52 ">
+            <p className="text-xl text-[var(--shared-label-primary)] font-normal text-center">“Through these projects, 
+              I gained hands-on experience in UX/UI design and development, focusing on user needs, teamwork, and clear communication. This portfolio highlights my user-centered design skills and eagerness to grow through future creative projects.”</p>
+          </div>
+
+          <Footer />
+
+        </>
       )}
     </div>
   );
