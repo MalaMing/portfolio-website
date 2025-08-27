@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${SFPro.className} antialiased bg-[var(--bg-primary)]`}
+        className={`${SFPro.className} antialiased bg-[var(--bg-primary)] select-none`}
       >
         <Navbar/>
         {children}

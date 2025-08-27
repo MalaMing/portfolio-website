@@ -4,9 +4,8 @@ import { ProjectCard } from "../Project-Card";
 import { SlideButton } from "../SlideButton";
 
 export function ProjectCardGroup() {
-  const [isWide, setIsWide] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(1);
+  // Removed unused visibleCards state
 
   type ProjectCardType = {
     title: string;
@@ -83,21 +82,20 @@ export function ProjectCardGroup() {
       gradientColor: "/images/projects/event_book/gradient.svg",
     },
     {
-      title: "POS: Application for Buffet Restaurant",
-      description:
-        "For small buffet restaurants for manage orders, customer ordering, table reservations, and payments.",
-      coverImage: "/images/projects/POS/cover.png",
-      technologies: [
-        "Figma",
-        "UX/UI",
-        "Prototype",
-        "TypeScript",
-        "Go Fiber",
-        "POS",
-        "Food",
-        "Development",
-      ],
-      gradientColor: "/images/projects/POS/gradient.svg",
+        title: "POS: Application for Buffet Restaurant",
+        description: "For small buffet restaurants to manage orders, customer ordering, table reservations, and payments.",
+        technologies: [
+            "Figma",
+            "UX/UI",
+            "Prototype",
+            "TypeScript",
+            "Go Fiber",
+            "POS",
+            "Food",
+            "Development",
+        ],
+        gradientColor: "/images/projects/POS/gradient.svg",
+        coverImage: "/images/projects/POS/cover.png"
     },
     {
       title: "Second-Handed Clothes Landing Page",
@@ -117,38 +115,20 @@ export function ProjectCardGroup() {
     },
   ];
 
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setIsWide(width > 2100);
-    };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const maxIndex = Math.max(0, cards.length - visibleCards);
+  // Number of cards visible in the carousel
+  const VISIBLE_CARDS = 3;
+  const maxIndex = Math.max(0, cards.length - VISIBLE_CARDS);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + 3, maxIndex));
+    setCurrentIndex((prev) => Math.min(prev + VISIBLE_CARDS, maxIndex));
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - 3, 0));
+    setCurrentIndex((prev) => Math.max(prev - VISIBLE_CARDS, 0));
   };
 
-  if (isWide) {
-    // ใช้ flex ปกติเมื่อหน้าจอกว้างกว่า 2100px
-    return (
-      <div className="flex flex-row gap-6 ">
-        {cards.map((c: ProjectCardType, i: number) => (
-          <ProjectCard key={i} {...c} />
-        ))}
-      </div>
-    );
-  }
-
+  
   // ✅ ที่เหลือจะเป็น carousel เท่านั้น
   return (
     <div className="flex flex-col gap-6">

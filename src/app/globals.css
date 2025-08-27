@@ -3,24 +3,20 @@
 @import "tw-animate-css";
 @import "material-symbols";
 
-:root {
-  cursor: none;
-}
 
-* {
-  cursor: none !important;
-}
+
+
 
 a,
 button,
 input[type="submit"],
 input[type="button"],
 select {
-  cursor: none !important;
+  cursor: pointer !important;
 }
 
-*:hover {
-  cursor: none !important;
+button:hover {
+  cursor: pointer !important;
 }
 
 @plugin "@iconify/tailwind4";

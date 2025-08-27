@@ -29,7 +29,7 @@ export function ProjectCard({
         <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] h-[500px]">
+            className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] h-[500px]">
             
             {/* Gradient overlays */}
             <div className="absolute inset-0">
@@ -38,6 +38,7 @@ export function ProjectCard({
                     alt="Gradient Overlay"
                     layout="fill"
                     className="object-cover"
+                    draggable="false"
                 />
             </div>
 
@@ -49,6 +50,7 @@ export function ProjectCard({
                     width={405}
                     height={402}
                     className="object-cover"
+                    draggable="false"
                 />
             </div>
 

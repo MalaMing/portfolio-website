@@ -17,7 +17,7 @@ import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
 import { ProjectCardGroup } from "@/components/group/Project";
-import { Footer } from "@/components/section/footer";
+import { Footer } from "@/components/section/Footer";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
@@ -49,7 +49,7 @@ export default function Home() {
           >
             <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
             <div className="flex flex-col items-center content-center gap-2">
-              <Image src="/images/profile.png" width={480} height={480} alt="" />
+              <Image src="/images/profile.png" width={480} height={480} alt="" draggable="false" />
               <div className="flex flex-col items-center justify-center gap-10 max-w-[760px]">
                 <BodyText text="I’m a computer science student at Kasetsart University with a passion for UI design and front-end development." />
                 <div className="flex flex-col items-center justify-center gap-12">
