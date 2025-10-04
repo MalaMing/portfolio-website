@@ -78,9 +78,7 @@ export default function Home() {
                 <BodyTextSecondary text="you can see my past projects here." />
               </div>
               <ProjectCardGroup />
-
             </motion.div>
-
           </motion.div>
 
 
