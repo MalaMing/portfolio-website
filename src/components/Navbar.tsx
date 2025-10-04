@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const Links = [
-    { text: "Home", href: "#home" },
-    { text: "Projects", href: "#projects" },
+    { text: "Home", href: "/" },
+    { text: "Projects", href: "/projects" },
     { text: "About", href: "#about" },
     { text: "Skills", href: "#skills" },
 ];
@@ -11,12 +13,12 @@ export default function Navbar() {
             <ul className="flex flex-row gap-5 justify-end text-sm font-normal">
                 {Links.map((link, index) => (
                     <li key={index}>
-                        <a
+                        <Link
                             href={link.href}
                             className="text-[var(--topbar-label-state-default)] hover:text-[var(--topbar-label-state-hovered)] transition"
                         >
                             {link.text}
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
