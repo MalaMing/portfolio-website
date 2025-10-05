@@ -17,7 +17,6 @@ import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
 import { ProjectCardGroup } from "@/components/group/Project";
-import { Footer } from "@/components/section/Footer";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
@@ -42,7 +41,7 @@ export default function Home() {
           {/* Section Home */}
           <motion.div
             id="home"
-            className="flex flex-col gap-16 items-center justify-center pt-22 pb-24 px-24"
+            className="flex flex-col gap-16 items-center justify-center pt-22 pb-24 px-24 mt-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -71,7 +70,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}>
             {/* Section Projects */}
             <motion.div
-              className="flex flex-col gap-6 px-24 py-34  bg-[var(--bg-secondary)]  align-middle "
+              className="flex flex-col gap-6 px-24 py-24  bg-[var(--bg-secondary)]  align-middle "
             >
               <div className="flex flex-col gap-6 items-start">
                 <HeadeSecondary text={"Projects"} />
@@ -181,9 +180,6 @@ export default function Home() {
             <p className="text-xl text-[var(--shared-label-primary)] font-normal text-center">“Through these projects, 
               I gained hands-on experience in UX/UI design and development, focusing on user needs, teamwork, and clear communication. This portfolio highlights my user-centered design skills and eagerness to grow through future creative projects.”</p>
           </div>
-
-          <Footer />
-
         </>
       )}
     </div>

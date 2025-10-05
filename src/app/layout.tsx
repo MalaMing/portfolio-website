@@ -3,37 +3,38 @@ import localFont from "next/font/local"
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import "material-symbols";
+import { Footer } from "@/components/section/Footer";
 
 
 const SFPro = localFont({
   src: [
-    
+
     {
       path: "./font/SF-Pro-Text-Heavy.otf",
-      weight:"800",
+      weight: "800",
       style: "normal;",
 
     },
     {
       path: "./font/SF-Pro-Text-Bold.otf",
-      weight:"700",
+      weight: "700",
       style: "normal;",
 
     },
     {
       path: "./font/SF-Pro-Text-Semibold.otf",
-      weight:"600",
+      weight: "600",
       style: "normal;",
 
     },
     {
       path: "./font/SF-Pro-Text-Medium.otf",
-      weight:"500",
+      weight: "500",
       style: "normal;",
     },
-        {
+    {
       path: "./font/SF-Pro-Text-Regular.otf",
-      weight:"400",
+      weight: "400",
       style: "normal;",
     },
   ]
@@ -54,8 +55,9 @@ export default function RootLayout({
       <body
         className={`${SFPro.className} antialiased bg-[var(--bg-primary)] select-none`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

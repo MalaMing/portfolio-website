@@ -1,0 +1,96 @@
+import Image from "next/image";
+import { Header } from "../font-style/Header";
+import { BodyText } from "../font-style/Body";
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Badge } from "../badge";
+import { ProjectCardGroup } from "../group/Project";
+import { NeonHeader } from "../font-style/NeonHeader";
+import { HeadeSecondary } from "../font-style/Header-Secondary";
+import { BodyTextSecondary } from "../font-style/Body-Secondary";
+
+interface ContentTemplateType {
+    title: string;
+    description: string;
+    coverImage: string;
+    logoImage: string;
+    technologies: string[];
+    children: React.ReactNode;
+    firstText?: string;
+    lastText?: string;
+}
+
+
+export default function ContentTemplate({
+    title,
+    description,
+    coverImage,
+    logoImage,
+    technologies,
+    children,
+    firstText,
+    lastText,
+}: Readonly<ContentTemplateType>) {
+    const [showAllBadges, setShowAllBadges] = useState(false);
+
+    const hasMoreBadges = technologies.length > 4;
+    const visibleBadges = showAllBadges ? technologies : technologies.slice(0, 4);
+    return (
+        <main className="min-h-screen">
+            <section className="relative h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10">
+                <Image src={coverImage} alt={title} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" draggable="false" />
+            </section>
+
+            <div className="mt-10 w-full flex flex-col items-center justify-center gap-4 px-24">
+                <Image src={logoImage} alt={title} width={244} height={244} className="object-contain" draggable="false" />
+                <div className="flex flex-col gap-2 items-center justify-center text-center">
+                    <Header text={title} />
+                    <BodyText text={description} />
+                </div>
+                <div className="flex flex-row gap-2 flex-wrap w-[500px] items-center justify-center">
+                    {visibleBadges.map((tech, index) => (
+                        <motion.div
+                            key={index}
+                            whileHover={{ scale: 1.03, y: -2 }}
+                            whileTap={{ scale: 0.97, y: 0 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                            className="cursor-pointer"
+                        >
+                            <Badge type="primary" label={tech} size="xs" />
+                        </motion.div>
+                    ))}
+                    {hasMoreBadges && (
+                        <motion.div
+                            whileHover={{ scale: 1.03, y: -2 }}
+                            whileTap={{ scale: 0.97, y: 0 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                            className="cursor-pointer"
+                            onClick={() => setShowAllBadges(!showAllBadges)}
+                        >
+                            <Badge
+                                label={showAllBadges ? "Show Less" : `+ ${technologies.length - 4} More`}
+                                size="xs"
+                                type="primary"
+                            />
+                        </motion.div>
+                    )}
+                </div>
+                <div className="pt-20">
+                    <NeonHeader firstText={firstText ?? ""} lastText={lastText ?? ""} />
+                </div>
+            </div>
+
+            <div className="pt-20 px-24">
+                {children}
+            </div>
+
+            <div className="flex flex-col gap-6 px-24 py-24  bg-[var(--bg-secondary)]  align-middle">
+                <div className="flex flex-col gap-6 items-start">
+                    <HeadeSecondary text={"Projects"} />
+                    <BodyTextSecondary text="you can see my past projects here." />
+                </div>
+                <ProjectCardGroup />
+            </div>
+        </main>
+    );
+}

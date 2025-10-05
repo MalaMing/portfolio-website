@@ -9,7 +9,7 @@ const Links = [
 
 export default function Navbar() {
     return (
-        <nav className="py-6 px-24 bg-[var(--topbar-bg)] shadow-sm border-1 border-t-transparent border-x-transparent border-[var(--topbar-divider-border)] sticky top-0 z-50">
+        <nav className="py-6 px-24 bg-[var(--topbar-bg)] shadow-sm border-1 border-t-transparent border-x-transparent border-[var(--topbar-divider-border)] fixed top-0 z-50 w-full">
             <ul className="flex flex-row gap-5 justify-end text-sm font-normal">
                 {Links.map((link, index) => (
                     <li key={index}>

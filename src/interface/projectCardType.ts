@@ -4,4 +4,5 @@ export type ProjectCardType = {
     coverImage: string;
     technologies: string[];
     gradientColor: string;
+    link?: string;
 };

@@ -17,6 +17,7 @@ export const data_project: ProjectCardType[] = [
             "Development",
         ],
         gradientColor: "/images/projects/kanok/gradient.svg",
+        link: "/content/kanok-app",
     },
     {
         title: "PRISM: Smart Inventory & Sales Forecastt",
@@ -25,6 +26,8 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/prism/cover.png",
         technologies: ["Figma", "UX/UI", "Prototype", "Business Management"],
         gradientColor: "/images/projects/prism/gradient.svg",
+        link: "/content/prism-app",
+
     },
     {
         title: "Party Food Calculator",
@@ -33,6 +36,8 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/party_cal/cover.png",
         technologies: ["Figma", "UX/UI", "Next.js", "Food", "Development"],
         gradientColor: "/images/projects/party_cal/gradient.svg",
+        link: "/content/party-cal",
+
     },
     {
         title: "SCB Mobile Banking Home Screen-Redesign",
@@ -41,6 +46,7 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/scb_re/cover.png",
         technologies: ["Figma", "UX/UI", "Mobile Banking"],
         gradientColor: "/images/projects/scb_re/gradient.svg",
+        link: "/content/scb-re",
     },
     {
         title: "CMCS: Chinese Management Clinic System Project",
@@ -49,6 +55,8 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/cmcs/cover.png",
         technologies: ["Figma", "UX/UI", "Prototype", "Health"],
         gradientColor: "/images/projects/cmcs/gradient.svg",
+        link: "/content/cmcs-app",
+
     },
     {
         title: "Event Booking App Project",
@@ -65,6 +73,8 @@ export const data_project: ProjectCardType[] = [
             "Development",
         ],
         gradientColor: "/images/projects/event_book/gradient.svg",
+        link: "/content/event-book",
+
     },
     {
         title: "POS: Application for Buffet Restaurant",
@@ -80,7 +90,8 @@ export const data_project: ProjectCardType[] = [
             "Development",
         ],
         gradientColor: "/images/projects/POS/gradient.svg",
-        coverImage: "/images/projects/POS/cover.png"
+        coverImage: "/images/projects/POS/cover.png",
+        link: "/content/pos-app",
     },
     {
         title: "Second-Handed Clothes Landing Page",
@@ -89,6 +100,7 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/shop_landing/cover.png",
         technologies: ["HTML", "CSS", "Javascript", "Fashion", "Development"],
         gradientColor: "/images/projects/shop_landing/gradient.svg",
+        link: "/content/shop-landing",
     },
     {
         title: "CS Alumni System",
@@ -97,5 +109,7 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/alumni/cover.png",
         technologies: ["Figma", "UX/UI", "Prototype", "Education"],
         gradientColor: "/images/projects/alumni/gradient.svg",
+                link: "/content/alumni-app",
+
     },
 ];

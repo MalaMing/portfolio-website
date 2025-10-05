@@ -1,3 +1,5 @@
+"use client";
+
 import { Icon } from "lucide-react";
 import { Header } from "../font-style/Header";
 import { motion } from "motion/react";

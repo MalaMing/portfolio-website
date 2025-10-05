@@ -1,0 +1,77 @@
+"use client";
+
+import { Button } from "@/components/Button";
+import KanokScreen from "@/components/content/projects/kanok/ScreenGroup";
+import PartyCalculatorScreen from "@/components/content/projects/party_cal/ScreenGroup";
+import { BodyText } from "@/components/font-style/Body";
+import { BodyBaseline } from "@/components/font-style/Body-Baseline";
+import { Header } from "@/components/font-style/Header";
+import NeonText from "@/components/font-style/NeonText";
+import { SubHeader } from "@/components/font-style/SubHeader";
+import MobileScreen from "@/components/screen/MobileScreen";
+import ContentTemplate from "@/components/section/ContentTemplate";
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
+export default function PartyCalculatorAppContent() {
+    return (
+        <ContentTemplate
+            title="Party Calculator App"
+            description="food ordering and bill-splitting calculator for solo or group dining."
+            coverImage="/images/projects/party_cal/cover-page.png"
+            logoImage="/images/projects/party_cal/logo.png"
+            technologies={["Figma", "UX/UI", "Next.js", "Food", "Development"]}
+            firstText="Food Calculator"
+            lastText="Project"
+        >
+            <div className="flex flex-col gap-20 mb-20">
+                <div className="flex flex-row w-full gap-24 items-center justify-center">
+                    <MobileScreen
+                        videoSrc="/videos/party_cal/1.mp4"
+                    />
+                </div>
+                <BodyText text="A small project app created to solve the problem of group dining by helping with food ordering and fair bill-splitting." />
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: false }}
+                    className="flex flex-col gap-8"
+                >
+                    <Header text="Features" />
+                    <div className="flex flex-row gap-2">
+                        <div className="flex flex-col gap-2 py-4 pr-4">
+                            <SubHeader text="Customer" />
+                            <div className="flex flex-col gap-1 items-baseline">
+                                <BodyBaseline text="• Add members to a group" />
+                                <BodyBaseline text="• Add, edit, and delete dishes (main/custom)" />
+                                <BodyBaseline text="• Split dishes among selected members" />
+                                <BodyBaseline text="• View full table summary" />
+                                <BodyBaseline text="• Checkout with PromptPay for payments" />
+
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+                <Button
+                    type="special"
+                    label="Portfolio"
+                    leftIcon={<Icon icon="gg:figma" />}
+                    onClick={() => window.open("https://www.behance.net/gallery/232670993/Redesign-Mobile-Banking-Application-Homescreen", "_blank")}
+                />
+                <div className="flex flex-col gap-24">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col gap-4 items-center justify-center"
+                    >
+                        <NeonText text="Developer | UX/UI : @mingmmie, @HOMIEZ09" />
+                    </motion.div>
+                    <PartyCalculatorScreen />
+                </div>
+            </div>
+        </ContentTemplate>
+    );
+}
