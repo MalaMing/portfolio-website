@@ -52,7 +52,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}>
             <motion.div
-              className="flex flex-col gap-8 md:gap-12 md:px-18 px-8 py-24  bg-[var(--bg-secondary)] align-middle"
+              className="flex flex-col gap-8 md:gap-12 md:px-18 px-8 py-24 align-middle"
             >
               <div className="flex flex-col gap-6 items-center md:items-start">
                 <HeadeSecondary text={"Projects"} />

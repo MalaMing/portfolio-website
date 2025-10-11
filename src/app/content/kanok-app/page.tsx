@@ -26,7 +26,7 @@ export default function KanokAppContent() {
             lastText="Project"
         >
             <div className="flex flex-col gap-20 mb-20">
-                <div className="flex flex-row w-full gap-24 items-center justify-center">
+                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center">
                     <MobileScreen
                         videoSrc={ASSETS.projects.kanok.videos[1]}
                     />
@@ -46,7 +46,7 @@ export default function KanokAppContent() {
                     className="flex flex-col gap-8"
                 >
                     <Header text="Features" />
-                    <div className="flex flex-row gap-2">
+                    <div className="flex flex-col md:flex-row gap-2">
                         <div className="flex flex-col gap-2 py-4 pr-4 w-full">
                             <SubHeader text="Customer" />
                             <div className="flex flex-col gap-1 items-baseline">

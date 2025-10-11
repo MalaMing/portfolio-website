@@ -15,7 +15,7 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="py-3 px-4 sm:py-4 sm:px-6 md:px-12 lg:px-18 bg-[var(--topbar-bg)] shadow-sm border-1 border-t-transparent border-x-transparent border-[var(--topbar-divider-border)] fixed top-0 z-50 w-full">
+        <nav className="py-3 px-4 sm:py-4 sm:px-6 md:px-12 lg:px-18 bg-[var(--topbar-bg)] shadow-sm border-1 border-t-transparent border-x-transparent border-[var(--topbar-divider-border)] fixed left-0 top-0 z-50 w-full">
             {/* Mobile Menu Button */}
             <div className="md:hidden flex justify-end">
                 <button

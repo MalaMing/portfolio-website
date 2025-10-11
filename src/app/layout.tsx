@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${SFPro.className} antialiased bg-[var(--bg-primary)] select-none`}
+        className={`${SFPro.className} antialiased bg-[var(--bg-primary)] select-none max-w-screen-xl mx-auto`}
       >
         <Navbar />
         {children}
