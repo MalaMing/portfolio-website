@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Title } from "./font-style/Title";
+import { Title } from "../font-style/Title";
 
 export function SquareCard({ icon, title, body }: { icon: string, title: string, body: string }) {
     return (

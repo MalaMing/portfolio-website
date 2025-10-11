@@ -1,19 +1,16 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import KanokScreen from "@/components/content/projects/kanok/ScreenGroup";
+import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";
 import { Header } from "@/components/font-style/Header";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import Line from "@/components/Line";
+import Line from "@/components/ui/Line";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import MobileImage from "@/components/screen/MobileImage";
 import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
-import PRISMScreen from "@/components/content/projects/prism/ScreenGroup";
-import EventBookScreen from "@/components/content/projects/event-book/ScreenGroup";
 import POSScreen from "@/components/content/projects/pos/ScreenGroup";
 
 export default function POSAppContent() {

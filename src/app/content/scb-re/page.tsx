@@ -1,8 +1,6 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import KanokScreen from "@/components/content/projects/kanok/ScreenGroup";
-import PartyCalculatorScreen from "@/components/content/projects/party_cal/ScreenGroup";
+import { Button } from "@/components/ui/button";
 import SCBReScreen from "@/components/content/projects/scb-re/ScreenGroup";
 import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";

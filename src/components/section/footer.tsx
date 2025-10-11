@@ -1,6 +1,5 @@
 "use client";
 
-import { Icon } from "lucide-react";
 import { Header } from "../font-style/Header";
 import { motion } from "motion/react";
 
@@ -10,7 +9,7 @@ interface FooterProps {
 
 export function Footer() {
     return (
-        <footer className="flex flex-col p-24 bg-[var(--footer-bg)] border-t-1 border-[var(--divider-level-2)] gap-8 items-center">
+        <footer id="contact" className="flex flex-col p-24 bg-[var(--footer-bg)] border-t-1 border-[var(--divider-level-2)] gap-8 items-center">
             <Header text="Contact"/>
             <div className="flex flex-col gap-6">
             <div className="flex flex-row gap-2 justify-center ">

@@ -109,7 +109,7 @@ export const data_project: ProjectCardType[] = [
         coverImage: "/images/projects/alumni/cover.png",
         technologies: ["Figma", "UX/UI", "Prototype", "Education"],
         gradientColor: "/images/projects/alumni/gradient.svg",
-                link: "/content/alumni-app",
+        link: "/content/alumni-app",
 
     },
 ];

@@ -3,7 +3,7 @@ import { Header } from "../font-style/Header";
 import { BodyText } from "../font-style/Body";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Badge } from "../badge";
+import { Badge } from "../ui/badge";
 import { ProjectCardGroup } from "../group/Project";
 import { NeonHeader } from "../font-style/NeonHeader";
 import { HeadeSecondary } from "../font-style/Header-Secondary";
@@ -37,17 +37,43 @@ export default function ContentTemplate({
     const visibleBadges = showAllBadges ? technologies : technologies.slice(0, 4);
     return (
         <main className="min-h-screen">
-            <section className="relative h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10">
+            <motion.section
+                className="relative h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <Image src={coverImage} alt={title} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" draggable="false" />
-            </section>
+            </motion.section>
 
-            <div className="mt-10 w-full flex flex-col items-center justify-center gap-4 px-24">
-                <Image src={logoImage} alt={title} width={244} height={244} className="object-contain" draggable="false" />
-                <div className="flex flex-col gap-2 items-center justify-center text-center">
+            <motion.div
+                className="mt-10 w-full flex flex-col items-center justify-center gap-4 px-18"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                    <Image src={logoImage} alt={title} width={244} height={244} className="object-contain" draggable="false" />
+                </motion.div>
+                <motion.div
+                    className="flex flex-col gap-2 items-center justify-center text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                >
                     <Header text={title} />
                     <BodyText text={description} />
-                </div>
-                <div className="flex flex-row gap-2 flex-wrap w-[500px] items-center justify-center">
+                </motion.div>
+                <motion.div
+                    className="flex flex-row gap-2 flex-wrap w-[500px] items-center justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                >
                     {visibleBadges.map((tech, index) => (
                         <motion.div
                             key={index}
@@ -74,23 +100,35 @@ export default function ContentTemplate({
                             />
                         </motion.div>
                     )}
-                </div>
-                <div className="pt-20">
+                </motion.div>
+                <motion.div
+                    className="pt-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                >
                     <NeonHeader firstText={firstText ?? ""} lastText={lastText ?? ""} />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
-            <div className="pt-20 px-24">
+            <motion.div
+                className="pt-20 px-18"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+            >
                 {children}
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col gap-6 px-24 py-24  bg-[var(--bg-secondary)]  align-middle">
+            <motion.div
+                className="flex flex-col gap-12 px-18 py-24  bg-[var(--bg-secondary)]  align-middle "
+            >
                 <div className="flex flex-col gap-6 items-start">
                     <HeadeSecondary text={"Projects"} />
                     <BodyTextSecondary text="you can see my past projects here." />
                 </div>
                 <ProjectCardGroup />
-            </div>
+            </motion.div>
         </main>
     );
 }

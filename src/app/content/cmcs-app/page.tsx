@@ -1,24 +1,19 @@
 "use client";
 
-import { Button } from "@/components/Button";
-import KanokScreen from "@/components/content/projects/kanok/ScreenGroup";
+import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";
 import { Header } from "@/components/font-style/Header";
 import NeonText from "@/components/font-style/NeonText";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import Line from "@/components/Line";
 import DesktopScreen from "@/components/screen/DesktopScreen";
-import MobileImage from "@/components/screen/MobileImage";
-import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import PRISMScreen from "@/components/content/projects/prism/ScreenGroup";
-import { Badge } from "@/components/badge";
+import { Badge } from "@/components/ui/badge";
 import CMCSScreen from "@/components/content/projects/alumni/ScreenGroup";
 
-const DesignProcess: { label: string}[] = [
+const DesignProcess: { label: string }[] = [
     { label: "UX research" },
     { label: "Competitive analysis" },
     { label: "Persona" },
@@ -98,7 +93,7 @@ export default function CMCSAppContent() {
                 />
                 <div className="flex flex-col gap-4">
 
-                <CMCSScreen />
+                    <CMCSScreen />
                 </div>
 
             </div>

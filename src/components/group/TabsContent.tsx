@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { TabsItem } from "./content/TabsContent";
+import { TabsItem } from "../content/TabsContent";
 
 const tabs = [
   {

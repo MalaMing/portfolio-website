@@ -1,4 +1,3 @@
-import { px } from 'motion';
 import Image from 'next/image';
 
 interface MobileScreenProps {

@@ -1,15 +1,11 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { ProjectCard } from "../Project-Card";
-import { SlideButton } from "../SlideButton";
+import { ProjectCard } from "../ui/Project-Card";
+import { SlideButton } from "../ui/SlideButton";
 import { data_project } from "../../../public/harddata/data_project";
 
 export function ProjectCardGroup() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // Removed unused visibleCards state
-
-
-  // Number of cards visible in the carousel
   const VISIBLE_CARDS = 3;
   const maxIndex = Math.max(0, data_project.length - VISIBLE_CARDS);
 
@@ -21,10 +17,8 @@ export function ProjectCardGroup() {
     setCurrentIndex((prev) => Math.max(prev - VISIBLE_CARDS, 0));
   };
 
-  
-  // ✅ ที่เหลือจะเป็น carousel เท่านั้น
-  return (
-    <div className="flex flex-col gap-6">
+    return (
+    <div className="flex flex-col gap-10">
       <div className="relative w-full overflow-hidden">
         {/* Track */}
         <motion.div
@@ -41,7 +35,7 @@ export function ProjectCardGroup() {
           {data_project.map((card, i) => (
             <motion.div
               key={i}
-              className="flex-shrink-0 pr-6"
+              className="flex-shrink-0 pr-5"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}

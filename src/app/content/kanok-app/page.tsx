@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import KanokScreen from "@/components/content/projects/kanok/ScreenGroup";
 import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";
 import { Header } from "@/components/font-style/Header";
 import NeonText from "@/components/font-style/NeonText";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import Line from "@/components/Line";
+import Line from "@/components/ui/Line";
 import MobileImage from "@/components/screen/MobileImage";
 import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
@@ -97,17 +97,17 @@ export default function KanokAppContent() {
                     onClick={() => window.open("https://www.youtube.com/watch?v=w4qy4m1k2XQ", "_blank")}
                 />
                 <div className="flex flex-col gap-24">
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col gap-4 items-center justify-center"
-                >
-                    <p className="text-5xl font-bold text-[(--var(shared/label/primary))]">40+ app screens</p>
-                    <NeonText text="Three roles in one application" />
-                </motion.div>
-                <KanokScreen />
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col gap-4 items-center justify-center"
+                    >
+                        <p className="text-5xl font-bold text-[(--var(shared/label/primary))]">40+ app screens</p>
+                        <NeonText text="Three roles in one application" />
+                    </motion.div>
+                    <KanokScreen />
                 </div>
             </div>
         </ContentTemplate>

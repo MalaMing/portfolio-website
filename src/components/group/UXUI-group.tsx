@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { SquareCard } from "../SquareCard";
-import { SlideButton } from "../SlideButton";
+import { SquareCard } from "../ui/SquareCard";
+import { SlideButton } from "../ui/SlideButton";
 
 export function UXUIGroup() {
     const [isWide, setIsWide] = useState(false);
@@ -60,7 +60,6 @@ export function UXUIGroup() {
     };
 
     if (isWide) {
-        // ใช้ flex ปกติเมื่อหน้าจอกว้างกว่า 2100px
         return (
             <div className="flex flex-row gap-6">
                 {cards.map((c, i) => (
@@ -70,9 +69,8 @@ export function UXUIGroup() {
         );
     }
 
-    // ใช้ carousel เมื่อหน้าจอแคบกว่า 2100px
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-10">
             <div className="relative w-full overflow-hidden">
                 {/* Track */}
                 <motion.div
@@ -89,7 +87,7 @@ export function UXUIGroup() {
                     {cards.map((card, i) => (
                         <motion.div
                             key={i}
-                            className="flex-shrink-0 pr-6"
+                            className="flex-shrink-0 pr-5"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: false }}

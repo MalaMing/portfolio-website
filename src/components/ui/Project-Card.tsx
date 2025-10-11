@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Badge } from "./badge";
 import { useState } from "react";
 import * as motion from "motion/react-client";
-import { hex } from "motion";
 import { useRouter } from "next/navigation";
 
 interface ProjectCardProps {
@@ -38,7 +37,7 @@ export function ProjectCard({
             onClick={onClickCard}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] h-[500px]">
+            className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-full max-w-[372px] h-[500px]">
             
             {/* Gradient overlays */}
             <div className="absolute inset-0">
@@ -87,7 +86,10 @@ export function ProjectCard({
                                 whileTap={{ scale: 0.97, y: 0 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                                 className="cursor-pointer"
-                                onClick={() => setShowAllBadges(!showAllBadges)}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowAllBadges(!showAllBadges);
+                                }}
                             >
                               <Badge
                                   label={showAllBadges ? "Show Less" : `+ ${technologies.length - 4} More`}
