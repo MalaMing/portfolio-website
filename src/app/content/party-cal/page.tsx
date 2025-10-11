@@ -11,22 +11,23 @@ import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/data";
 
-export default function PartyCalculatorAppContent() {
+export default function PartyCalContent() {
     return (
         <ContentTemplate
-            title="Party Calculator App"
-            description="food ordering and bill-splitting calculator for solo or group dining."
-            coverImage="/images/projects/party_cal/cover-page.png"
-            logoImage="/images/projects/party_cal/logo.png"
+            title="Party Cal"
+            description="party food calculator"
+            coverImage={ASSETS.projects.partyCal.coverPage}
+            logoImage={ASSETS.projects.partyCal.logo}
             technologies={["Figma", "UX/UI", "Next.js", "Food", "Development"]}
-            firstText="Food Calculator"
+            firstText="Party Food Calculator"
             lastText="Project"
         >
             <div className="flex flex-col gap-20 mb-20">
                 <div className="flex flex-row w-full gap-24 items-center justify-center">
                     <MobileScreen
-                        videoSrc="/videos/party_cal/1.mp4"
+                        videoSrc={ASSETS.projects.partyCal.videos[1]}
                     />
                 </div>
                 <BodyText text="A small project app created to solve the problem of group dining by helping with food ordering and fair bill-splitting." />
@@ -47,7 +48,6 @@ export default function PartyCalculatorAppContent() {
                                 <BodyBaseline text="• Split dishes among selected members" />
                                 <BodyBaseline text="• View full table summary" />
                                 <BodyBaseline text="• Checkout with PromptPay for payments" />
-
                             </div>
                         </div>
                     </div>

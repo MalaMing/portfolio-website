@@ -1,9 +1,7 @@
 import DesktopImage from "@/components/screen/DesktopImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 12; i++) {
-    images.push(`/images/projects/event_book/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.eventBook.screens, 12);
 
 export default function EventBookScreen() {
     return (

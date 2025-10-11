@@ -47,7 +47,7 @@ export function Button({
         <motion.button
             whileHover={{
                 scale: 1.04,
-                boxShadow: "0px 8px 20px rgba(0,0,0,0.15)", // เงานุ่มๆ หรูๆ
+                boxShadow: "0px 8px 20px rgba(0,0,0,0.15)",
             }}
             whileTap={{ scale: 0.96 }}
             transition={{

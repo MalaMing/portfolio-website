@@ -1,9 +1,7 @@
 import MobileImage from "@/components/screen/MobileImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 2; i++) {
-    images.push(`/images/projects/scb_re/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.scbRe.screens, 2);
 
 export default function SCBReScreen() {
     return (

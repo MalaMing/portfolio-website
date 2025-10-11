@@ -72,7 +72,6 @@ export function UXUIGroup() {
     return (
         <div className="flex flex-col gap-10">
             <div className="relative w-full overflow-hidden">
-                {/* Track */}
                 <motion.div
                     className="flex w-full"
                     animate={{
@@ -103,7 +102,6 @@ export function UXUIGroup() {
                 </motion.div>
             </div>
 
-            {/* ปุ่มเลื่อน */}
             <motion.div
                 className="flex justify-end gap-6"
                 initial={{ opacity: 0, y: 20 }}

@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { Badge } from "@/components/ui/badge";
 import CMCSScreen from "@/components/content/projects/alumni/ScreenGroup";
+import { ASSETS } from "@/data";
 
 const DesignProcess: { label: string }[] = [
     { label: "UX research" },
@@ -31,8 +32,8 @@ export default function CMCSAppContent() {
         <ContentTemplate
             title="CMCS"
             description="china management clinic system"
-            coverImage="/images/projects/cmcs/cover-page.png"
-            logoImage="/images/projects/cmcs/logo.png"
+            coverImage={ASSETS.projects.cmcs.coverPage}
+            logoImage={ASSETS.projects.cmcs.logo}
             technologies={["Figma", "UX/UI", "Prototype", "Health"]}
             firstText="China Management Clinic System"
             lastText="Project"

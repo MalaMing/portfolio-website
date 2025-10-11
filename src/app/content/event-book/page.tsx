@@ -9,14 +9,15 @@ import Line from "@/components/ui/Line";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import EventBookScreen from "@/components/content/projects/event-book/ScreenGroup";
+import { ASSETS } from "@/data";
 
 export default function EventBookAppContent() {
     return (
         <ContentTemplate
             title="PLASOM REUNION"
             description="event booking application"
-            coverImage="/images/projects/event_book/cover-page.png"
-            logoImage="/images/projects/event_book/logo.png"
+            coverImage={ASSETS.projects.eventBook.coverPage}
+            logoImage={ASSETS.projects.eventBook.logo}
             technologies={["Figma", "UI", "Java", "JavaFX", "CSS", "Booking", "Development"]}
             firstText="Event Booking Application"
             lastText="Project"

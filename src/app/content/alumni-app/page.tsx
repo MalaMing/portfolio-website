@@ -10,14 +10,15 @@ import DesktopScreen from "@/components/screen/DesktopScreen";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import AlumniScreen from "@/components/content/projects/csas/ScreenGroup";
+import { ASSETS } from "@/data";
 
 export default function AlumniAppContent() {
     return (
         <ContentTemplate
             title="CSAS"
             description="computer science alumni system"
-            coverImage="/images/projects/alumni/cover-page.png"
-            logoImage="/images/projects/alumni/logo.png"
+            coverImage={ASSETS.projects.alumni.coverPage}
+            logoImage={ASSETS.projects.alumni.logo}
             technologies={["Figma", "UI", "Prototype", "Education"]}
             firstText="CS Alumni System"
             lastText="Project"
@@ -39,17 +40,17 @@ export default function AlumniAppContent() {
                     <Header text="Features" />
                     <div className="flex flex-row gap-2 justify-between w-full">
                         <div className="flex flex-col gap-2 py-4 pr-4 w-full overflow-y-auto justify-center items-center">
-                            <Image src="/images/projects/alumni/content/full-logo.png" alt="feature" width={330} height={250} className="rounded-lg" />
+                            <Image src={ASSETS.projects.alumni.content.fullLogo} alt="feature" width={330} height={250} className="rounded-lg" />
                             <BodyText text="looks unique but incorporates unity through circular, interconnected elements." />
                         </div>
                         <Line />
                         <div className="flex flex-col gap-2 py-4 pr-4 w-full overflow-y-auto justify-center items-center">
-                            <Image src="/images/projects/alumni/content/color.png" alt="feature" width={330} height={250} className="rounded-lg" />
+                            <Image src={ASSETS.projects.alumni.content.color} alt="feature" width={330} height={250} className="rounded-lg" />
                             <BodyText text="This color is calming, created by combining the university's green and the department's colors." />
                         </div>
                         <Line />
                         <div className="flex flex-col gap-2 py-4 pr-4 w-full overflow-y-auto justify-center items-center">
-                            <Image src="/images/projects/alumni/content/typography.png" alt="feature" width={330} height={250} className="rounded-lg" />
+                            <Image src={ASSETS.projects.alumni.content.typography} alt="feature" width={330} height={250} className="rounded-lg" />
                             <BodyText text="A Poppins font that is easy to read and comfortable on the eyes." />
                         </div>
 

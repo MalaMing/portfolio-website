@@ -5,14 +5,15 @@ import { BodyText } from "@/components/font-style/Body";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import DesktopImage from "@/components/screen/DesktopImage";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/data";
 
 export default function ShopLandingAppContent() {
     return (
         <ContentTemplate
             title="mmonika website"
             description="second-handed  clothes landing page"
-            coverImage="/images/projects/shop_landing/cover-page.png"
-            logoImage="/images/projects/shop_landing/logo.png"
+            coverImage={ASSETS.projects.shopLanding.coverPage}
+            logoImage={ASSETS.projects.shopLanding.logo}
             technologies={["HTML", "CSS", "Javascript", "Fashion", "Development"]}
             firstText="Second-Handed"
             lastText="Website"
@@ -30,7 +31,7 @@ export default function ShopLandingAppContent() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     <DesktopImage
-                        imgSrc="/images/projects/shop_landing/screen/1.png"
+                        imgSrc={ASSETS.projects.shopLanding.screens(1)}
                     />
                 </motion.div>
                 <motion.div

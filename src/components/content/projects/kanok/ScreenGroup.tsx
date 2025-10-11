@@ -1,9 +1,7 @@
 import MobileImage from "@/components/screen/MobileImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 24; i++) {
-    images.push(`/images/projects/kanok/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.kanok.screens, 24);
 
 export default function KanokScreen() {
     return (

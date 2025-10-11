@@ -1,9 +1,7 @@
 import DesktopImage from "@/components/screen/DesktopImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 6; i++) {
-    images.push(`/images/projects/prism/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.prism.screens, 6);
 
 export default function PRISMScreen() {
     return (

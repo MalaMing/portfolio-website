@@ -1,8 +1,5 @@
 "use client";
-
-import { useEffect, useState, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import PathDrawing from "@/components/Animation";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { Header } from "@/components/font-style/Header";
@@ -17,12 +14,11 @@ import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
 import { ProjectCardGroup } from "@/components/group/Project";
+import { ASSETS } from "@/data";
 
 export default function Home() {
-
   return (
     <div className="relative cursor-auto">
-          {/* Section Home */}
           <motion.div
            id="home"
             className="flex flex-col gap-10 items-center justify-center pt-24 pb-24 px-18"
@@ -33,7 +29,7 @@ export default function Home() {
             <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
             <div className="flex flex-col items-center content-center gap-4">
               <div className="flex flex-col w-[460px] h-[460px]">
-                <Image src="/images/profile.png" width={460} height={460} alt="" draggable="false" />
+                <Image src={ASSETS.profile.image} width={460} height={460} alt="" draggable="false" />
               </div>
               <div className="flex flex-col items-center justify-center gap-10 max-w-[760px]">
                 <BodyText text="I’m a computer science student at Kasetsart University with a passion for UI design and front-end development." />
@@ -54,7 +50,6 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}>
-            {/* Section Projects */}
             <motion.div
               className="flex flex-col gap-12 px-18 py-24  bg-[var(--bg-secondary)]  align-middle "
             >
@@ -67,7 +62,6 @@ export default function Home() {
           </motion.div>
 
 
-          {/* Section About */}
           <motion.div
             id="about"
             className="p-18 flex flex-col gap-24 items-center justify-center"
@@ -112,7 +106,6 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Work Experience */}
             <motion.div
               className="flex flex-col gap-12"
               initial={{ opacity: 0, y: 30 }}
@@ -122,7 +115,6 @@ export default function Home() {
               <WorkExperience title="Work Experience" />
             </motion.div>
 
-            {/* Education Experience */}
             <motion.div
               className="flex flex-col gap-12"
               initial={{ opacity: 0, y: 30 }}
@@ -133,7 +125,6 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Section Skills */}
           <motion.div
             id="skills"
             className="flex flex-col p-18 gap-10"

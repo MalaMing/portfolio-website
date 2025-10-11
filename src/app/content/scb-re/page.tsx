@@ -11,14 +11,15 @@ import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/data";
 
 export default function SCBAppContent() {
     return (
         <ContentTemplate
             title="SCB Mobile Banking"
             description="redesign- mobile banking app"
-            coverImage="/images/projects/scb_re/cover-page.png"
-            logoImage="/images/projects/scb_re/logo.png"
+            coverImage={ASSETS.projects.scbRe.coverPage}
+            logoImage={ASSETS.projects.scbRe.logo}
             technologies={["Figma", "UX/UI", "Mobile Banking"]}
             firstText="Mobile Banking Home Screen"
             lastText="Redesign"
@@ -26,10 +27,10 @@ export default function SCBAppContent() {
             <div className="flex flex-col gap-20 mb-20">
                 <div className="flex flex-row w-full gap-24 items-center justify-center">
                     <MobileScreen
-                        videoSrc="/videos/scb_re/1.mp4"
+                        videoSrc={ASSETS.projects.scbRe.videos[1]}
                     />
                     <MobileScreen
-                        videoSrc="/videos/scb_re/2.mp4"
+                        videoSrc={ASSETS.projects.scbRe.videos[2]}
                     />
                 </div>
                 <BodyText text="Home screen design for quick balance check, scan to pay, and everyday actions." />

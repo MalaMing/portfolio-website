@@ -1,13 +1,13 @@
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProjectCard } from "../ui/Project-Card";
 import { SlideButton } from "../ui/SlideButton";
-import { data_project } from "../../../public/harddata/data_project";
+import { projectsData } from "@/data";
 
 export function ProjectCardGroup() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const VISIBLE_CARDS = 3;
-  const maxIndex = Math.max(0, data_project.length - VISIBLE_CARDS);
+  const maxIndex = Math.max(0, projectsData.length - VISIBLE_CARDS);
 
   const handleNext = () => {
     setCurrentIndex((prev) => Math.min(prev + VISIBLE_CARDS, maxIndex));
@@ -20,7 +20,6 @@ export function ProjectCardGroup() {
     return (
     <div className="flex flex-col gap-10">
       <div className="relative w-full overflow-hidden">
-        {/* Track */}
         <motion.div
           className="flex w-full"
           animate={{
@@ -32,7 +31,7 @@ export function ProjectCardGroup() {
             damping: 30,
           }}
         >
-          {data_project.map((card, i) => (
+          {projectsData.map((card, i) => (
             <motion.div
               key={i}
               className="flex-shrink-0 pr-5"
@@ -51,7 +50,6 @@ export function ProjectCardGroup() {
         </motion.div>
       </div>
 
-      {/* ปุ่มเลื่อน */}
       <motion.div
         className="flex justify-end gap-6"
         initial={{ opacity: 0, y: 20 }}
@@ -66,7 +64,7 @@ export function ProjectCardGroup() {
         <SlideButton
           icon="chevron_right"
           onClick={handleNext}
-          disabled={currentIndex >= data_project.length - 3}
+          disabled={currentIndex >= projectsData.length - 3}
         />
       </motion.div>
     </div>

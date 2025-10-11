@@ -9,14 +9,15 @@ import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import PRISMScreen from "@/components/content/projects/prism/ScreenGroup";
+import { ASSETS } from "@/data";
 
 export default function PRISMAppContent() {
     return (
         <ContentTemplate
             title="PRISM"
             description="smart inventory & sale forecast application"
-            coverImage="/images/projects/prism/cover-page.png"
-            logoImage="/images/projects/prism/logo.png"
+            coverImage={ASSETS.projects.prism.coverPage}
+            logoImage={ASSETS.projects.prism.logo}
             technologies={["Figma", "UX/UI", "Prototype", "Business Management"]}
             firstText="Business Management"
             lastText="Application"

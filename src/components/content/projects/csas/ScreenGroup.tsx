@@ -1,9 +1,7 @@
 import DesktopImage from "@/components/screen/DesktopImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 9; i++) {
-    images.push(`/images/projects/alumni/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.alumni.screens, 9);
 
 export default function AlumniScreen() {
     return (

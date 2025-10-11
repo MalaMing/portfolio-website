@@ -1,9 +1,7 @@
 import MobileImage from "@/components/screen/MobileImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const images: string[] = [];
-for (let i = 1; i <= 10; i++) {
-    images.push(`/images/projects/party_cal/screen/${i}.png`);
-}
+const images = generateScreenPaths(ASSETS.projects.partyCal.screens, 10);
 
 export default function PartyCalculatorScreen() {
     return (

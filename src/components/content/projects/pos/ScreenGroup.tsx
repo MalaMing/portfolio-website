@@ -1,14 +1,9 @@
 import DesktopImage from "@/components/screen/DesktopImage";
 import MobileImage from "@/components/screen/MobileImage";
+import { generateScreenPaths, ASSETS } from "@/data";
 
-const desktopImages: string[] = [];
-for (let i = 1; i <= 8; i++) {
-    desktopImages.push(`/images/projects/POS/screen/${i}.png`);
-}
-const mobileImages: string[] = [];
-for (let i = 9; i <= 12; i++) {
-    mobileImages.push(`/images/projects/POS/screen/${i}.png`);
-}
+const desktopImages = Array.from({ length: 8 }, (_, i) => ASSETS.projects.pos.screens(i + 1));
+const mobileImages = Array.from({ length: 4 }, (_, i) => ASSETS.projects.pos.screens(i + 9));
 
 export default function POSScreen() {
     return (

@@ -12,14 +12,15 @@ import MobileImage from "@/components/screen/MobileImage";
 import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/data";
 
 export default function KanokAppContent() {
     return (
         <ContentTemplate
             title="Kanok App"
             description="custom tailoring shop"
-            coverImage="/images/projects/kanok/cover-page.png"
-            logoImage="/images/projects/kanok/logo.png"
+            coverImage={ASSETS.projects.kanok.coverPage}
+            logoImage={ASSETS.projects.kanok.logo}
             technologies={["Figma", "UX/UI", "React Native", "Expo", "Go Fiber", "E-Commerce", "Fashion", "Development"]}
             firstText="Tailor Management System"
             lastText="Project"
@@ -27,13 +28,13 @@ export default function KanokAppContent() {
             <div className="flex flex-col gap-20 mb-20">
                 <div className="flex flex-row w-full gap-24 items-center justify-center">
                     <MobileScreen
-                        videoSrc="/videos/kanok/1.mp4"
+                        videoSrc={ASSETS.projects.kanok.videos[1]}
                     />
                     <MobileScreen
-                        videoSrc="/videos/kanok/2.mp4"
+                        videoSrc={ASSETS.projects.kanok.videos[2]}
                     />
                     <MobileScreen
-                        videoSrc="/videos/kanok/3.mp4"
+                        videoSrc={ASSETS.projects.kanok.videos[3]}
                     />
                 </div>
                 <BodyText text="An e-commerce application for custom clothing orders. Developed from a System Analysis course project involving shop interviews, system planning, analysis, design, and development." />

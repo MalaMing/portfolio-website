@@ -12,14 +12,15 @@ import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import POSScreen from "@/components/content/projects/pos/ScreenGroup";
+import { ASSETS } from "@/data";
 
 export default function POSAppContent() {
     return (
         <ContentTemplate
             title="BUFFET POS"
             description="buffet restaurant management application"
-            coverImage="/images/projects/POS/cover-page.png"
-            logoImage="/images/projects/POS/logo.png"
+            coverImage={ASSETS.projects.pos.coverPage}
+            logoImage={ASSETS.projects.pos.logo}
             technologies={["Figma", "UI", "Prototype", "TypeScript", "Go Fiber", "POS", "Food", "Development"]}
             firstText="Buffet Restaurant Management"
             lastText="Project"
@@ -33,7 +34,7 @@ export default function POSAppContent() {
                     </div>
                     <div className="flex-1 flex justify-center">
                         <MobileScreen
-                            videoSrc="/videos/pos/1.mp4"
+                            videoSrc={ASSETS.projects.pos.videos[1]}
                         />
                     </div>
                 </div>
