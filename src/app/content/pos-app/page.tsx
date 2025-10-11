@@ -47,7 +47,7 @@ export default function POSAppContent() {
                     className="flex flex-col gap-8"
                 >
                     <Header text="Features" />
-                    <div className="flex flex-row gap-2 w-full justify-between">
+                    <div className="flex flex-col md:flex-row gap-2 w-full justify-between">
                         <div className="flex flex-col gap-2 py-4 pr-4 w-full">
                             <SubHeader text="General User" />
                             <div className="flex flex-col gap-1 items-baseline">
