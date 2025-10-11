@@ -1,17 +1,13 @@
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { ProjectCard } from "../Project-Card";
-import { SlideButton } from "../SlideButton";
-import { data_project } from "../../../public/harddata/data_project";
+import { useState } from "react";
+import { ProjectCard } from "../ui/Project-Card";
+import { SlideButton } from "../ui/SlideButton";
+import { projectsData } from "@/data";
 
 export function ProjectCardGroup() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // Removed unused visibleCards state
-
-
-  // Number of cards visible in the carousel
   const VISIBLE_CARDS = 3;
-  const maxIndex = Math.max(0, data_project.length - VISIBLE_CARDS);
+  const maxIndex = Math.max(0, projectsData.length - VISIBLE_CARDS);
 
   const handleNext = () => {
     setCurrentIndex((prev) => Math.min(prev + VISIBLE_CARDS, maxIndex));
@@ -21,12 +17,9 @@ export function ProjectCardGroup() {
     setCurrentIndex((prev) => Math.max(prev - VISIBLE_CARDS, 0));
   };
 
-  
-  // ✅ ที่เหลือจะเป็น carousel เท่านั้น
-  return (
-    <div className="flex flex-col gap-6">
+    return (
+    <div className="flex flex-col gap-10">
       <div className="relative w-full overflow-hidden">
-        {/* Track */}
         <motion.div
           className="flex w-full"
           animate={{
@@ -38,10 +31,10 @@ export function ProjectCardGroup() {
             damping: 30,
           }}
         >
-          {data_project.map((card, i) => (
+          {projectsData.map((card, i) => (
             <motion.div
               key={i}
-              className="flex-shrink-0 pr-6"
+              className="flex-shrink-0 pr-5"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
@@ -57,7 +50,6 @@ export function ProjectCardGroup() {
         </motion.div>
       </div>
 
-      {/* ปุ่มเลื่อน */}
       <motion.div
         className="flex justify-end gap-6"
         initial={{ opacity: 0, y: 20 }}
@@ -72,7 +64,7 @@ export function ProjectCardGroup() {
         <SlideButton
           icon="chevron_right"
           onClick={handleNext}
-          disabled={currentIndex >= data_project.length - 3}
+          disabled={currentIndex >= projectsData.length - 3}
         />
       </motion.div>
     </div>

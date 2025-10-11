@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { ProjectCard } from "../Project-Card";
-import { SlideButton } from "../SlideButton";
-import { data_project } from "../../../public/harddata/data_project";
+import { ProjectCard } from "../ui/Project-Card";
+import { SlideButton } from "../ui/SlideButton";
+import { projectsData } from "@/data";
 import {
   Pagination,
   PaginationContent,
@@ -21,18 +21,15 @@ export function ProjectWithPagination({ searchValue }: ProjectWithPaginationProp
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  // Calculate total pages
-  const totalPages = Math.ceil(data_project.length / itemsPerPage);
+  const totalPages = Math.ceil(projectsData.length / itemsPerPage);
   
-  // Get current items to display
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
-  const currentItems = data_project.filter((project) =>
+  const currentItems = projectsData.filter((project) =>
     project.title.toLowerCase().includes(searchValue?.toLowerCase() || "")
   ).slice(startIndex, endIndex);
 
-  // Handle page change
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -51,8 +48,7 @@ export function ProjectWithPagination({ searchValue }: ProjectWithPaginationProp
   
   return (
     <div className="flex flex-col gap-12">
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center">
         {currentItems.map((card, i) => (
           <motion.div
             key={i}
@@ -66,12 +62,12 @@ export function ProjectWithPagination({ searchValue }: ProjectWithPaginationProp
               technologies={card.technologies}
               coverImage={card.coverImage}
               gradientColor={card.gradientColor}
+              link={card.link}
             />
           </motion.div>
         ))}
       </div>
 
-      {/* Pagination Controls */}
       {totalPages > 1 && (
         <Pagination className="justify-end">
           <PaginationContent>
@@ -87,7 +83,6 @@ export function ProjectWithPagination({ searchValue }: ProjectWithPaginationProp
             </PaginationItem>
             
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-              // Show first page, last page, current page, and pages around current
               const showPage = 
                 page === 1 || 
                 page === totalPages || 

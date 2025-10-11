@@ -1,60 +1,91 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+"use client"
 
-import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
-        "icon-sm": "size-8",
-        "icon-lg": "size-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
+export function Button({
+    className = "",
+    label,
+    leftIcon,
+    onClick,
+    type = "primaryBorder",
+}: {
+    className?: string
+    label?: string
+    leftIcon?: React.ReactNode
+    onClick?: () => void
+    type?: "primary" | "primaryBorder" | "special"
+}) {
+    const classMap = {
+        primary: {
+            default: "bg-[var(--button-primary-state-default)]",
+            hovered: "hover:bg-[var(--button-primary-state-hovered)]",
+            iconColorDefault: "text-[var(--button-primary-shared-icon)]",
+            textColorDefault: "text-[var(--button-primary-shared-text)]",
+        },
+        primaryBorder: {
+            default: "bg-transparent border border-[#FFFFFF] text-[#FFFFFF]",
+            iconColorDefault: "text-[#FFFFFF]",
+            hovered: "hover:bg-[#303037] hover:border-[#303037]",
+            iconColorHovered: "hover:text-[#F8F8F8]",
+            selected: "bg-[#303037] border-[#303037] text-[#F8F8F8]",
+            iconColorSelected: "text-[#F8F8F8]",
+            selectedHovered:
+                "hover:bg-[#303037] hover:border-[#303037] hover:text-[#D7D7D7]",
+            iconColorSelectedHovered: "hover:text-[#D7D7D7]",
+        },
+        special: {
+            default:
+                "bg-gradient-to-r from-[var(--button-special-state-default-level-1)] via-[var(--button-special-state-default-level-2)] to-[var(--button-special-state-default-level-3)]",
+            hovered:
+                "bg-gradient-to-r from-[var(--button-special-state-hovered-level-1)] via-[var(--button-special-state-hovered-level-2)] to-[var(--button-special-state-hovered-level-3)] hover:opacity-90",
+            iconColorDefault: "text-[var(--button-special-shared-icon)]",
+            textColorDefault: "text-[var(--button-special-shared-text)]",
+        },
+    }
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
-  const Comp = asChild ? Slot : "button"
-
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
+    return (
+        <motion.button
+            whileHover={{
+                scale: 1.04,
+                boxShadow: "0px 8px 20px rgba(0,0,0,0.15)",
+            }}
+            whileTap={{ scale: 0.96 }}
+            transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+            }}
+            className={[
+                "mx-auto px-6 py-2 text-lg font-normal rounded-[var(--button-shared-radius)] inline-flex items-center justify-center gap-2 transition-colors duration-200",
+                classMap[type].iconColorDefault,
+                "iconColorHovered" in classMap[type]
+                    ? classMap[type].iconColorHovered
+                    : "",
+                "iconColorSelected" in classMap[type]
+                    ? classMap[type].iconColorSelected
+                    : "",
+                "iconColorSelectedHovered" in classMap[type]
+                    ? classMap[type].iconColorSelectedHovered
+                    : "",
+                classMap[type].default,
+                classMap[type].hovered,
+                "selected" in classMap[type] ? classMap[type].selected : "",
+                "selectedHovered" in classMap[type] ? classMap[type].selectedHovered : "",
+                className,
+            ]
+                .filter(Boolean)
+                .join(" ")}
+            onClick={onClick}
+        >
+            {leftIcon && (
+                <span
+                    className="material-symbols-rounded"
+                    style={{ fontSize: "var(--font-size-lg)" }}
+                >
+                    {leftIcon}
+                </span>
+            )}
+            {label}
+        </motion.button>
+    )
 }
-
-export { Button, buttonVariants }
