@@ -65,9 +65,9 @@ export default function Home() {
           <motion.div
             id="about"
             className="p-18 flex flex-col gap-24 items-center justify-center"
-            initial="hidden"
-            animate="visible"
-            transition={{ staggerChildren: 0.3, delayChildren: 0.1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <Header text="About" />
 
