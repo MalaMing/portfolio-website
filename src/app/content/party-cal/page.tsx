@@ -54,9 +54,9 @@ export default function PartyCalContent() {
                 </motion.div>
                 <Button
                     type="special"
-                    label="Portfolio"
-                    leftIcon={<Icon icon="gg:figma" />}
-                    onClick={() => window.open("https://www.behance.net/gallery/232670993/Redesign-Mobile-Banking-Application-Homescreen", "_blank")}
+                    label="Try it out"
+                    leftIcon= "mobile_2"
+                    onClick={() => window.open("https://party-calculator.vercel.app/", "_blank")}
                 />
                 <div className="flex flex-col gap-24">
                     <motion.div

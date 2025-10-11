@@ -45,6 +45,7 @@ export default function ShopLandingAppContent() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
+                    className="flex flex-row w-full gap-24 items-center justify-center"
                 >
                     <Button
                         type="special"
