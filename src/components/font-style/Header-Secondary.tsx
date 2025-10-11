@@ -1,3 +1,5 @@
+"use client";
+
 export function HeadeSecondary({ text, className }: { text: string, className?: string }) {
     return (
         <header>

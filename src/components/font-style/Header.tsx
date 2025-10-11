@@ -1,3 +1,5 @@
+"use client";
+
 export function Header({ text }: { text: string }) {
     return (
         <header>

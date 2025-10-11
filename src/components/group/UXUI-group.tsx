@@ -83,7 +83,7 @@ export function UXUIGroup() {
         <div className="flex flex-col gap-5 sm:gap-5 md:gap-5">
             <div className="relative w-full overflow-hidden">
                 <motion.div
-                    className="flex w-full "
+                    className="flex w-full"
                     style={{ paddingRight: '20px' }}
                     animate={{
                         x: `-${currentIndex * cardWidth}%`

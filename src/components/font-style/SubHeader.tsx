@@ -1,3 +1,5 @@
+"use client";
+
 export function SubHeader({ text }: { text: string }) {
     return (
         <header>

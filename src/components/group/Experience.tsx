@@ -1,3 +1,5 @@
+"use client";
+
 import { ExperienceContent } from "./ExperienceContent";
 
 export function ExperienceGroup({ data }: { data: Array<{ company: string, duration: string, title: string, body: string, logo: string }> }) {

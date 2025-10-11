@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { Title } from "../font-style/Title";
 
@@ -14,7 +16,7 @@ export function SquareCard({ icon, title, body }: { icon: string, title: string,
                 </div>
                 <div className="flex flex-col gap-2">
                     <Title text={title} />
-                    <p className="text-sm sm:text-base font-normal text-[var(--card-uxui-label-body)]">{body}</p>
+                    <p className="text-base font-normal text-[var(--card-uxui-label-body)]">{body}</p>
                 </div>
             </div>
         </motion.div>

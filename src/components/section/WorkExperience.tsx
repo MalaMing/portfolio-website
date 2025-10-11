@@ -1,3 +1,5 @@
+"use client";
+
 import { SubHeader } from "../font-style/SubHeader";
 import { ExperienceGroup } from "../group/Experience";
 import { workExperienceData } from "@/data";

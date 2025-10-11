@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Header } from "../font-style/Header";
 import { BodyText } from "../font-style/Body";

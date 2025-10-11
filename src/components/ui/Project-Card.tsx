@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Badge } from "./badge";
 import { useState } from "react";
@@ -65,7 +67,6 @@ export function ProjectCard({
                 <p className="text-2xl font-semibold text-[var(--card-project-label-title)]">{title}</p>
                 <div className="flex flex-col gap-3">
                     <p className="text-base font-normal text-[var(--card-project-label-body)]">{description}</p>
-
                     <div className="flex flex-row gap-2 flex-wrap">
                         {visibleBadges.map((tech, index) => (
                             <motion.div

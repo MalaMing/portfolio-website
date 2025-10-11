@@ -1,3 +1,5 @@
+"use client";
+
 import MobileImage from "@/components/screen/MobileImage";
 import { generateScreenPaths, ASSETS } from "@/data";
 

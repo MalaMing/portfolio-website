@@ -1,3 +1,5 @@
+"use client";
+
 import DesktopImage from "@/components/screen/DesktopImage";
 import { generateScreenPaths, ASSETS } from "@/data";
 

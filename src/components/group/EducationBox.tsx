@@ -1,3 +1,5 @@
+"use client";
+
 import { educationExperienceData, ASSETS } from "@/data";
 
 export default function EducationBox() {

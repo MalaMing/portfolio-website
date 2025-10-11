@@ -1,3 +1,5 @@
+"use client";
+
 interface SlideButtonProps {
     icon: string;
     onClick: () => void;

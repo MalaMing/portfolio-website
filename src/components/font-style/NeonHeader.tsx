@@ -1,3 +1,5 @@
+"use client";
+
 export function NeonHeader({ firstText, lastText }: { firstText: string, lastText: string }) {
     return (
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center sm:text-left">
