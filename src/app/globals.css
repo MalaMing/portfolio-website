@@ -3,6 +3,24 @@
 @import "tw-animate-css";
 @import "material-symbols";
 
+
+
+
+
+a,
+button,
+input[type="submit"],
+input[type="button"],
+select {
+  cursor: pointer !important;
+}
+
+button:hover {
+  cursor: pointer !important;
+}
+
+@plugin "@iconify/tailwind4";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -114,10 +132,15 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
