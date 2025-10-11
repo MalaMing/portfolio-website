@@ -37,8 +37,7 @@ export function ProjectCard({
             onClick={onClickCard}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-full max-w-[372px] h-[500px]">
-            
+            className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] max-w-[372px] h-[500px]">
             <div className="absolute inset-0">
                 <Image
                     src={gradientColor}
@@ -49,6 +48,7 @@ export function ProjectCard({
                 />
             </div>
 
+            {/* Cover Image */}
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center items-center">
                 <Image
                     src={coverImage ?? "/default-cover.png"}
@@ -60,6 +60,7 @@ export function ProjectCard({
                 />
             </div>
 
+            {/* Content */}
             <div className="relative p-6 flex flex-col gap-3">
                 <p className="text-2xl font-semibold text-[var(--card-project-label-title)]">{title}</p>
                 <div className="flex flex-col gap-3">

@@ -145,3 +145,24 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  /* Mobile specific styles */
+  .container {
+    @apply px-4;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

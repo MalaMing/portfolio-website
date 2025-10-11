@@ -42,6 +42,14 @@ export function UXUIGroup() {
         const handleResize = () => {
             const width = window.innerWidth;
             setIsWide(width > 2100);
+            
+            if (width < 640) {
+                setVisibleCards(1); // mobile
+            } else if (width < 1024) {
+                setVisibleCards(2); // tablet
+            } else {
+                setVisibleCards(3); // desktop
+            }
         };
 
         handleResize();
@@ -52,16 +60,16 @@ export function UXUIGroup() {
     const maxIndex = Math.max(0, cards.length - visibleCards);
 
     const handleNext = () => {
-        setCurrentIndex((prev) => Math.min(prev + 3, maxIndex));
+        setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prev) => Math.max(prev - 3, 0));
+        setCurrentIndex((prev) => Math.max(prev - 1, 0));
     };
 
     if (isWide) {
         return (
-            <div className="flex flex-row gap-6">
+            <div className="flex flex-row gap-5 flex-wrap justify-center">
                 {cards.map((c, i) => (
                     <SquareCard key={i} {...c} />
                 ))}
@@ -69,13 +77,16 @@ export function UXUIGroup() {
         );
     }
 
+    const cardWidth = 100 / visibleCards;
+
     return (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5 sm:gap-5 md:gap-5">
             <div className="relative w-full overflow-hidden">
                 <motion.div
-                    className="flex w-full"
+                    className="flex w-full "
+                    style={{ paddingRight: '20px' }}
                     animate={{
-                        x: `-${currentIndex * (100 / 3)}%`
+                        x: `-${currentIndex * cardWidth}%`
                     }}
                     transition={{
                         type: "spring",
@@ -86,7 +97,11 @@ export function UXUIGroup() {
                     {cards.map((card, i) => (
                         <motion.div
                             key={i}
-                            className="flex-shrink-0 pr-5"
+                            className="flex-shrink-0"
+                            style={{ 
+                                width: `calc(${cardWidth}% - ${(visibleCards - 1) * 20 / visibleCards}px)`,
+                                marginRight: i < cards.length - 1 ? '20px' : '0'
+                            }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: false }}
@@ -103,7 +118,7 @@ export function UXUIGroup() {
             </div>
 
             <motion.div
-                className="flex justify-end gap-6"
+                className="flex justify-center sm:justify-end gap-4 sm:gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -116,7 +131,7 @@ export function UXUIGroup() {
                 <SlideButton
                     icon="chevron_right"
                     onClick={handleNext}
-                    disabled={currentIndex >= cards.length - 3}
+                    disabled={currentIndex >= maxIndex}
                 />
             </motion.div>
         </div>

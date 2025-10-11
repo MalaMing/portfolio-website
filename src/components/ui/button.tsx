@@ -56,7 +56,7 @@ export function Button({
                 damping: 20,
             }}
             className={[
-                "mx-auto px-6 py-2 text-lg font-normal rounded-[var(--button-shared-radius)] inline-flex items-center justify-center gap-2 transition-colors duration-200",
+                "w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-2.5 text-base sm:text-lg font-normal rounded-[var(--button-shared-radius)] inline-flex items-center justify-center gap-2 transition-colors duration-200",
                 classMap[type].iconColorDefault,
                 "iconColorHovered" in classMap[type]
                     ? classMap[type].iconColorHovered

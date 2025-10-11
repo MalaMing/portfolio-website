@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import "material-symbols";
-import { Footer } from "@/components/section/Footer";
+import { Footer } from "@/components/section/footer";
 
 
 const SFPro = localFont({

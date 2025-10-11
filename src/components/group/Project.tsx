@@ -6,24 +6,52 @@ import { projectsData } from "@/data";
 
 export function ProjectCardGroup() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const VISIBLE_CARDS = 3;
-  const maxIndex = Math.max(0, projectsData.length - VISIBLE_CARDS);
+  
+  const getVisibleCards = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 1; // mobile - show 1 card
+      if (window.innerWidth < 1024) return 2; // tablet - show 2 cards
+      return 3; // desktop - show 3 cards max
+    }
+    return 3;
+  };
+
+  const [visibleCards, setVisibleCards] = useState(getVisibleCards());
+  
+  // Ensure we don't show more cards than exist in projectsData
+  const actualVisibleCards = Math.min(visibleCards, projectsData.length);
+  const maxIndex = Math.max(0, projectsData.length - actualVisibleCards);
+
+  // Update visible cards on resize
+  useState(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        const newVisibleCards = getVisibleCards();
+        setVisibleCards(newVisibleCards);
+        setCurrentIndex(prev => Math.min(prev, Math.max(0, projectsData.length - newVisibleCards)));
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  });
 
   const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + VISIBLE_CARDS, maxIndex));
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - VISIBLE_CARDS, 0));
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
-    return (
-    <div className="flex flex-col gap-10">
+  const cardWidth = 100 / actualVisibleCards;
+
+  return (
+    <div className="flex flex-col gap-5">
       <div className="relative w-full overflow-hidden">
         <motion.div
-          className="flex w-full"
+          className="flex flex-full gap-5"
           animate={{
-            x: `-${currentIndex * (100 / 3)}%`,
+            x: `-${currentIndex * cardWidth}%`,
           }}
           transition={{
             type: "spring",
@@ -34,7 +62,7 @@ export function ProjectCardGroup() {
           {projectsData.map((card, i) => (
             <motion.div
               key={i}
-              className="flex-shrink-0 pr-5"
+              style={{ width: `calc(${cardWidth}% - ${(actualVisibleCards - 1) * 20 / actualVisibleCards}px)` }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
@@ -51,7 +79,7 @@ export function ProjectCardGroup() {
       </div>
 
       <motion.div
-        className="flex justify-end gap-6"
+        className="flex justify-center sm:justify-end gap-5"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
@@ -64,7 +92,7 @@ export function ProjectCardGroup() {
         <SlideButton
           icon="chevron_right"
           onClick={handleNext}
-          disabled={currentIndex >= projectsData.length - 3}
+          disabled={currentIndex >= maxIndex}
         />
       </motion.div>
     </div>
