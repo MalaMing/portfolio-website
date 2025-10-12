@@ -54,12 +54,14 @@ export default function PRISMAppContent() {
                         </div>
                     </div>
                 </motion.div>
+                <div className="mx-auto">
                 <Button
                     type="special"
                     label="Portfolio"
                     leftIcon={<Icon icon="mage:behance" />}
                     onClick={() => window.open("https://www.behance.net/gallery/232667945/PRISM-Smart-Inventory-Sale-Forecast", "_blank")}
                 />
+                </div>
                 <div className="flex flex-col gap-4">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}

@@ -73,12 +73,14 @@ export default function POSAppContent() {
                         </div>
                     </div>
                 </motion.div>
+                <div className="mx-auto">
                 <Button
                     type="special"
                     label="GitHub"
                     leftIcon="code"
                     onClick={() => window.open("https://github.com/472-S-BuffetPOS-6510451077/buffet-pos-frontend", "_blank")}
                 />
+                </div>
                 <div className="flex flex-col gap-4">
                     <POSScreen />
                 </div>

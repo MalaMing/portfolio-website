@@ -57,12 +57,14 @@ export default function AlumniAppContent() {
 
                     </div>
                 </motion.div>
-                <Button
-                    type="special"
-                    label="Prototype"
-                    leftIcon={<Icon icon="gg:figma" />}
-                    onClick={() => window.open("https://www.figma.com/proto/X7M0q5QO5rAsGb0yQWpeBb/UXUI---CSAlumni?page-id=0%3A1&node-id=20-44130&viewport=-3092%2C3640%2C0.16&t=sbxo6vOXfC2QBCXa-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A44130&show-proto-sidebar=1", "_blank")}
-                />
+                <div className="mx-auto">
+                    <Button
+                        type="special"
+                        label="Prototype"
+                        leftIcon={<Icon icon="gg:figma" />}
+                        onClick={() => window.open("https://www.figma.com/proto/X7M0q5QO5rAsGb0yQWpeBb/UXUI---CSAlumni?page-id=0%3A1&node-id=20-44130&viewport=-3092%2C3640%2C0.16&t=sbxo6vOXfC2QBCXa-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A44130&show-proto-sidebar=1", "_blank")}
+                    />
+                </div>
                 <div className="flex flex-col gap-4">
                     <AlumniScreen />
                 </div>

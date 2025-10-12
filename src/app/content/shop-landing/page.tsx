@@ -47,12 +47,15 @@ export default function ShopLandingAppContent() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center"
                 >
-                    <Button
-                        type="special"
-                        label="Website"
-                        leftIcon="code"
-                        onClick={() => window.open("https://malaming.github.io/mmonikastore-website/", "_blank")}
-                    />
+                    <div className="mx-auto">
+
+                        <Button
+                            type="special"
+                            label="Website"
+                            leftIcon="code"
+                            onClick={() => window.open("https://malaming.github.io/mmonikastore-website/", "_blank")}
+                        />
+                    </div>
                 </motion.div>
                 <div className="flex flex-col gap-4">
                 </div>
