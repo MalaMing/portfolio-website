@@ -39,7 +39,7 @@ export default function CMCSAppContent() {
             lastText="Project"
         >
             <div className="flex flex-col gap-20 mb-20">
-                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center">
+                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center">
                     <DesktopScreen
                         videoSrc="https://youtu.be/DKrjlgM5iz8"
                     />
