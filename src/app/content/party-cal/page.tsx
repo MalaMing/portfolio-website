@@ -52,12 +52,14 @@ export default function PartyCalContent() {
                         </div>
                     </div>
                 </motion.div>
+                <div className="mx-auto">
                 <Button
                     type="special"
                     label="Try it out"
                     leftIcon= "mobile_2"
                     onClick={() => window.open("https://party-calculator.vercel.app/", "_blank")}
                 />
+                </div>
                 <div className="flex flex-col gap-18">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}

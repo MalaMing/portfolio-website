@@ -58,12 +58,14 @@ export default function EventBookAppContent() {
                         </div>
                     </div>
                 </motion.div>
+                <div className="mx-auto">
                 <Button
                     type="special"
                     label="GitHub"
                     leftIcon="code"
                     onClick={() => window.open("https://github.com/MalaMing/Event-Booking-Application", "_blank")}
                 />
+                </div>
                 <div className="flex flex-col gap-4">
                     <EventBookScreen />
                 </div>

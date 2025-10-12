@@ -86,12 +86,14 @@ export default function CMCSAppContent() {
                         </div>
                     </div>
                 </motion.div>
+                <div className="mx-auto">
                 <Button
                     type="special"
                     label="Portfolio"
                     leftIcon={<Icon icon="mage:behance" />}
                     onClick={() => window.open("https://www.behance.net/gallery/211537903/CMCS-clinic-management-system", "_blank")}
                 />
+                </div>
                 <div className="flex flex-col gap-4">
 
                     <CMCSScreen />
