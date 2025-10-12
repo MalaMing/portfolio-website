@@ -25,7 +25,7 @@ export default function Home() {
         className="flex flex-col gap-6 sm:gap-8 md:gap-10 items-center justify-center pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-8 md:px-12 lg:px-18"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.3 }}
       >
         <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
@@ -53,7 +53,7 @@ export default function Home() {
             className="flex flex-col gap-18 w-full"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.2 }}>
             <div
               className="flex flex-col gap-8 md:gap-10 md:px-18 px-8 py-18 align-middle"
@@ -74,7 +74,7 @@ export default function Home() {
         className="py-18 px-8 flex flex-col gap-16 md:gap-20 items-center justify-center"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: false, amount: 0.2 }}
       >
         <Header text="About" />
@@ -83,7 +83,7 @@ export default function Home() {
           className="flex flex-row text-lg gap-2 max-md:text-base text-start flex-wrap w-full justify-between"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           viewport={{ once: false, amount: 0.3 }}
         >
           <p className="max-w-[600px]">
@@ -119,7 +119,7 @@ export default function Home() {
           className="flex flex-col gap-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
           viewport={{ once: false, amount: 0.3 }}
         >
           <WorkExperience title="Work Experience" />
@@ -129,7 +129,7 @@ export default function Home() {
           className="flex flex-col gap-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.35, ease: 'easeOut' }}
           viewport={{ once: false, amount: 0.3 }}
         >
           <EducationExperience title="Education" />
@@ -141,7 +141,7 @@ export default function Home() {
         className="flex flex-col py-18 px-8 gap-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: false, amount: 0.2 }}
       >
         <Header text="Skills" />
@@ -150,7 +150,7 @@ export default function Home() {
           className="flex flex-col gap-32 "
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           viewport={{ once: false }}
         >
           <div className="flex flex-col gap-6 md:gap-10">
