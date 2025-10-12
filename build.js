@@ -54,3 +54,4 @@ fs.writeFileSync('./tokens/token.css', cssContent);
 
 console.log('✅ Design tokens generated successfully!');
 console.log('📁 Generated: ./tokens/token.css');
+console.log(tokens.components.topbar.bg.value);

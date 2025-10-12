@@ -9,7 +9,7 @@ interface FooterProps {
 
 export function Footer() {
     return (
-        <footer id="contact" className="flex flex-col px-4 py-12 sm:px-8 sm:py-16 md:p-24 bg-[var(--footer-bg)] border-t-1 border-[var(--divider-level-2)] gap-6 sm:gap-8 items-center">
+        <footer id="contact" className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col px-4 py-12 sm:px-8 sm:py-16 md:p-24 bg-[var(--footer-bg)] border-t-1 border-[var(--divider-level-2)] gap-6 sm:gap-8 items-center">
             <Header text="Contact"/>
             <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex flex-row gap-2 sm:gap-4 justify-center">
