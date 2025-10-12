@@ -23,13 +23,14 @@ export default function Home() {
       <motion.div
         id="home"
         className="flex flex-col gap-6 sm:gap-8 md:gap-10 items-center justify-center pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-8 md:px-12 lg:px-18"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
         <div className="flex flex-col items-center content-center gap-4">
-          <div className="relative flex flex-col md:w-[460px] md:h-[460px] w-[250px] h-[250px]">
+          <div className="relative flex flex-col md:w-[380px] md:h-[380px] w-[250px] h-[250px]">
             <Image src={ASSETS.profile.image} fill alt="" draggable="false" />
           </div>
           <div className="flex flex-col items-center justify-center gap-10 max-w-[760px]">
@@ -49,19 +50,20 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto w-full">
           <motion.div
             id="projects"
-            className="flex flex-col gap-32 w-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}>
-            <motion.div
-              className="flex flex-col gap-8 md:gap-12 md:px-18 px-8 py-24 align-middle"
+            className="flex flex-col gap-18 w-full"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: false, amount: 0.2 }}>
+            <div
+              className="flex flex-col gap-8 md:gap-10 md:px-18 px-8 py-18 align-middle"
             >
-              <div className="flex flex-col gap-6 items-center md:items-start">
+              <div className="flex flex-col gap-5 items-center md:items-start">
                 <HeadeSecondary text={"Projects"} />
                 <BodyTextSecondary text="you can see my past projects here." />
               </div>
               <ProjectCardGroup />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -69,18 +71,20 @@ export default function Home() {
 
       <motion.div
         id="about"
-        className="py-18 px-8 flex flex-col gap-12 md:gap-24 items-center justify-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        className="py-18 px-8 flex flex-col gap-16 md:gap-20 items-center justify-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <Header text="About" />
 
         <motion.div
-          className="flex flex-row text-xl gap-2 max-md:text-base text-start flex-wrap w-full justify-between"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          className="flex flex-row text-lg gap-2 max-md:text-base text-start flex-wrap w-full justify-between"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <p className="max-w-[600px]">
             <span className="text-[var(--shared-label-primary)] font-semibold">
@@ -114,8 +118,9 @@ export default function Home() {
         <motion.div
           className="flex flex-col gap-12"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <WorkExperience title="Work Experience" />
         </motion.div>
@@ -123,8 +128,9 @@ export default function Home() {
         <motion.div
           className="flex flex-col gap-12"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <EducationExperience title="Education" />
         </motion.div>
@@ -133,24 +139,26 @@ export default function Home() {
       <motion.div
         id="skills"
         className="flex flex-col py-18 px-8 gap-10"
-        initial="hidden"
-        animate="visible"
-        transition={{ staggerChildren: 0.3 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <Header text="Skills" />
 
         <motion.div
           className="flex flex-col gap-32 "
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: false }}
         >
-          <div className="flex flex-col gap-6 md:gap-12">
+          <div className="flex flex-col gap-6 md:gap-10">
             <SubHeader text="Coding" />
             <TabsSection />
           </div>
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8 md:gap-10">
             <SubHeader text="UX/UI" />
             <UXUIGroup />
           </div>

@@ -25,7 +25,7 @@ export default function ShopLandingAppContent() {
                 transition={{ duration: 0.6 }}
             >
                 <motion.div
-                    className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center"
+                    className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center"
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -45,7 +45,7 @@ export default function ShopLandingAppContent() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center"
+                    className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center"
                 >
                     <Button
                         type="special"

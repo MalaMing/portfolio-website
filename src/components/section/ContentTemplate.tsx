@@ -123,7 +123,7 @@ export default function ContentTemplate({
             </motion.div>
 
             <motion.div
-                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col gap-12 px-18 py-24  bg-[var(--bg-secondary)] align-middle "
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col bg-[var(--bg-secondary)] gap-8 md:gap-10 md:px-18 px-8 py-18 align-middle"
             >
                 <div className="max-w-screen-xl mx-auto w-full">
                     <div className="flex flex-col gap-6 items-start">

@@ -25,7 +25,7 @@ export default function PartyCalContent() {
             lastText="Project"
         >
             <div className="flex flex-col gap-20 mb-20">
-                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center">
+                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center">
                     <MobileScreen
                         videoSrc={ASSETS.projects.partyCal.videos[1]}
                     />
@@ -58,7 +58,7 @@ export default function PartyCalContent() {
                     leftIcon= "mobile_2"
                     onClick={() => window.open("https://party-calculator.vercel.app/", "_blank")}
                 />
-                <div className="flex flex-col gap-24">
+                <div className="flex flex-col gap-18">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}

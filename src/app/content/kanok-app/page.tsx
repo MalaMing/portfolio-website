@@ -26,7 +26,7 @@ export default function KanokAppContent() {
             lastText="Project"
         >
             <div className="flex flex-col gap-20 mb-20">
-                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-24 items-center justify-center">
+                <div className="flex flex-col md:flex-row w-full gap-12 md:gap-18 items-center justify-center">
                     <MobileScreen
                         videoSrc={ASSETS.projects.kanok.videos[1]}
                     />
@@ -97,7 +97,7 @@ export default function KanokAppContent() {
                     leftIcon="movie"
                     onClick={() => window.open("https://www.youtube.com/watch?v=w4qy4m1k2XQ", "_blank")}
                 />
-                <div className="flex flex-col gap-24">
+                <div className="flex flex-col gap-18">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
