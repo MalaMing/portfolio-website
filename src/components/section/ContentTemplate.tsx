@@ -38,9 +38,9 @@ export default function ContentTemplate({
     const hasMoreBadges = technologies.length > 4;
     const visibleBadges = showAllBadges ? technologies : technologies.slice(0, 4);
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen ">
             <motion.section
-                className="relative h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10"
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -123,13 +123,15 @@ export default function ContentTemplate({
             </motion.div>
 
             <motion.div
-                className="flex flex-col gap-12 px-18 py-24  bg-[var(--bg-secondary)]  align-middle "
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col gap-12 px-18 py-24  bg-[var(--bg-secondary)] align-middle "
             >
-                <div className="flex flex-col gap-6 items-start">
-                    <HeadeSecondary text={"Projects"} />
-                    <BodyTextSecondary text="you can see my past projects here." />
+                <div className="max-w-screen-xl mx-auto w-full">
+                    <div className="flex flex-col gap-6 items-start">
+                        <HeadeSecondary text={"Projects"} />
+                        <BodyTextSecondary text="you can see my past projects here." />
+                    </div>
+                    <ProjectCardGroup />
                 </div>
-                <ProjectCardGroup />
             </motion.div>
         </main>
     );
