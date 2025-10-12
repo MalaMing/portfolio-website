@@ -20,7 +20,7 @@ export default function ProjectsPage() {
     return (
         <motion.div
             id="projects"
-            className="flex flex-col gap-8 sm:gap-10 md:gap-12 min-h-screen bg-[var(--bg-secondary)]"
+            className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col gap-8 sm:gap-10 md:gap-12 min-h-screen bg-[var(--bg-secondary)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
