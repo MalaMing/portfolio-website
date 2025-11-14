@@ -72,7 +72,6 @@ export default function SCBAppContent() {
                         viewport={{ once: true }}
                         className="flex flex-col gap-4 items-center justify-center"
                     >
-                        <NeonText text="Developer | UX/UI : @mingmmie, @HOMIEZ09" />
                     </motion.div>
                     <SCBReScreen />
                 </div>
