@@ -12,8 +12,8 @@ export function ExperienceContent({ company, duration, title, body, logo }: { co
                     <p className="text-base md:text-lg font-semibold text-[var(--shared-label-secondary)]">{duration}</p>
                 </div>
             </div>
-            <p className="text-base md:lg font-semibold text-[var(--shared-label-primary)]">{title}</p>
-            <p className="text-base md:lg font-normal text-[var(--shared-label-secondary)]">{body}</p>
+            <p className="text-base md:text-lg font-semibold text-[var(--shared-label-primary)]">{title}</p>
+            <p className="text-base md:text-lg font-normal text-[var(--shared-label-secondary)]">{body}</p>
         </div>
     );
 }

@@ -6,7 +6,7 @@ import { workExperienceData } from "@/data";
 
 export function WorkExperience({title}: {title: string}) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
         <SubHeader text={title} />
         <ExperienceGroup data={workExperienceData}/>
     </div>

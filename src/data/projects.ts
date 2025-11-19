@@ -20,7 +20,7 @@ export const projectsData: ProjectCardType[] = [
     link: "/content/kanok-app",
   },
   {
-    title: "PRISM: Smart Inventory & Sales Forecastt",
+    title: "PRISM: Smart Inventory & Sales Forecast",
     description:
       "Business management app for unified stock & sales tracking with AI forecasting.",
     coverImage: "/images/projects/prism/cover.png",

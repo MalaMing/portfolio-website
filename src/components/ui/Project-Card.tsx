@@ -40,7 +40,7 @@ export function ProjectCard({
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
         >
-            <div className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] max-w-[372px] h-[500px]">
+            <div className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] max-w-[372px] h-[500px] border-[var(--topbar-divider-border)] border-[1px]">
                 <div className="absolute inset-0">
                     <Image
                         src={gradientColor}
