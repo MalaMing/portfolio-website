@@ -50,7 +50,7 @@ export default function CMCSAppContent() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="flex flex-col gap-6 items-center justify-center w-[600px] mx-auto"
+                    className="flex flex-col gap-6 items-center justify-center md:w-[600px] w-full  mx-auto"
                 >
                     <NeonText text="UX/UI Design Process" />
 

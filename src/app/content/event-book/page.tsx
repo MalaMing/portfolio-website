@@ -33,7 +33,7 @@ export default function EventBookAppContent() {
                 >
                     <Header text="Features" />
                     <div className="flex flex-col md:flex-row gap-2">
-                        <div className="flex flex-col gap-2 py-4 pr-4 w-full">
+                        <div className="flex flex-col gap-2 p-4 md:py-4 md:pr-4 w-full">
                             <SubHeader text="General User" />
                             <div className="flex flex-col gap-1 items-baseline">
                                 <BodyBaseline text="• Sign up/Log in" />

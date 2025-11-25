@@ -11,7 +11,7 @@ export function SquareCard({ icon, title, body }: { icon: string, title: string,
 
         >
             <div className="w-[372px]">
-                <div className="flex flex-col gap-6 sm:gap-7 md:gap-9 px-4 sm:px-6 md:px-8 py-6 sm:py-7 md:py-9 rounded-[var(--card-uxui-radius)] bg-[var(--card-uxui-bg)] w-full h-[300px]">
+                <div className="flex flex-col gap-6 sm:gap-7 md:gap-9 px-4 sm:px-6 md:px-8 py-6 sm:py-7 md:py-9 rounded-[var(--card-uxui-radius)] bg-[var(--card-uxui-bg)] md:w-full md:h-[300px] w-[326px]">
                     <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--card-uxui-icon-logo-bg)]">
                         <span className="material-symbols-rounded text-[40px] sm:text-[48px]" style={{ color: "var(--card-uxui-icon-logo-icon)" }}>{icon}</span>
                     </div>

@@ -46,8 +46,8 @@ export default function KanokAppContent() {
                     className="flex flex-col gap-8"
                 >
                     <Header text="Features" />
-                    <div className="flex flex-col md:flex-row gap-2">
-                        <div className="flex flex-col gap-2 py-4 pr-4 w-full">
+                    <div className="flex flex-col md:flex-row gap-2 md:text-left w-full">
+                        <div className="flex flex-col gap-2 p-4 md:py-4 md:pr-4 w-full">
                             <SubHeader text="Customer" />
                             <div className="flex flex-col gap-1 items-baseline">
                                 <BodyBaseline text="• Sign up/Log in" />
@@ -107,7 +107,7 @@ export default function KanokAppContent() {
                         viewport={{ once: true }}
                         className="flex flex-col gap-4 items-center justify-center"
                     >
-                        <p className="text-5xl font-bold text-[(--var(shared/label/primary))]">40+ app screens</p>
+                        <p className="text-5xl text-center font-bold text-[(--var(shared/label/primary))]">40+ app screens</p>
                         <NeonText text="Three roles in one application" />
                     </motion.div>
                     <KanokScreen />

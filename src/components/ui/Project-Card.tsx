@@ -40,7 +40,7 @@ export function ProjectCard({
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
         >
-            <div className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[372px] max-w-[372px] h-[500px] border-[var(--topbar-divider-border)] border-[1px]">
+            <div className="cursor-pointer relative bg-[var(--card-project-bg)] shadow-white/40 rounded-3xl gap-3 flex flex-col overflow-hidden w-[322px] h-[450px] md:w-[372px] md:max-w-[372px] md:h-[500px] border-[var(--topbar-divider-border)] border-[1px]">
                 <div className="absolute inset-0">
                     <Image
                         src={gradientColor}
@@ -68,7 +68,7 @@ export function ProjectCard({
                     <p className="text-2xl font-semibold text-[var(--card-project-label-title)]">{title}</p>
                     <div className="flex flex-col gap-3">
                         <p className="text-base font-normal text-[var(--card-project-label-body)]">{description}</p>
-                        <div className="flex flex-row gap-2 flex-wrap">
+                        <div className="hidden md:flex flex-row gap-2 flex-wrap">
                             {visibleBadges.map((tech, index) => (
                                 <motion.div
                                     key={index}

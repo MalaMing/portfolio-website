@@ -38,7 +38,7 @@ export default function ContentTemplate({
     const hasMoreBadges = technologies.length > 4;
     const visibleBadges = showAllBadges ? technologies : technologies.slice(0, 4);
     return (
-        <main className="min-h-screen ">
+        <main className="min-h-screen">
             <motion.section
                 className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10"
                 initial={{ opacity: 0 }}
@@ -49,11 +49,12 @@ export default function ContentTemplate({
             </motion.section>
 
             <motion.div
-                className="mt-10 w-full flex flex-col items-center justify-center gap-4 px-18"
+                className="mt-10 w-full flex flex-col items-center justify-center gap-4 px-4 sm:px-8 md:px-18"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
+                <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center gap-8">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +72,7 @@ export default function ContentTemplate({
                     <BodyText text={description} />
                 </motion.div>
                 <motion.div
-                    className="flex flex-row gap-2 flex-wrap w-[500px] items-center justify-center"
+                    className="flex flex-row gap-2 flex-wrap w-full max-w-[760px] items-center justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -103,6 +104,7 @@ export default function ContentTemplate({
                         </motion.div>
                     )}
                 </motion.div>
+                </div>
                 <motion.div
                     className="pt-20"
                     initial={{ opacity: 0, y: 20 }}
@@ -123,10 +125,9 @@ export default function ContentTemplate({
             </motion.div>
 
             <motion.div
-                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col bg-[var(--bg-secondary)] gap-8 md:gap-10 md:px-18 px-8 py-18 align-middle"
-            >
-                <div className="max-w-screen-xl mx-auto w-full">
-                    <div className="flex flex-col gap-6 items-start">
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col bg-[var(--bg-secondary)] gap-8 md:gap-10 py-18 align-middle">
+                <div className="flex flex-col gap-8 md:gap-10 md:px-18 px-8 py-24 align-middle w-full" >
+                    <div className="flex flex-col gap-5 items-center md:items-start">
                         <HeadeSecondary text={"Projects"} />
                         <BodyTextSecondary text="you can see my past projects here." />
                     </div>
