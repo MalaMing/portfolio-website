@@ -5,7 +5,7 @@ import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";
 import { Header } from "@/components/font-style/Header";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import Line from "@/components/ui/line";
+import Line from "@/components/ui/line-divider";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import MobileImage from "@/components/screen/MobileImage";
 import MobileScreen from "@/components/screen/MobileScreen";

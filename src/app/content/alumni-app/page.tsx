@@ -3,14 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { Header } from "@/components/font-style/Header";
-import Line from "@/components/ui/line";
+import Line from "@/components/ui/line-divider";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import DesktopScreen from "@/components/screen/DesktopScreen";
-import Image from "next/image";
 import { Icon } from "@iconify/react";
 import AlumniScreen from "@/components/content/projects/alumni/ScreenGroup";
 import { ASSETS } from "@/data";
+import Image from "next/image";
 
 export default function AlumniAppContent() {
     return (
