@@ -5,7 +5,7 @@ import { BodyText } from "@/components/font-style/Body";
 import { BodyBaseline } from "@/components/font-style/Body-Baseline";
 import { Header } from "@/components/font-style/Header";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import Line from "@/components/ui/Line";
+import Line from "@/components/ui/line";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import EventBookScreen from "@/components/content/projects/event-book/ScreenGroup";

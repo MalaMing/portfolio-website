@@ -16,7 +16,6 @@ import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
 import { ProjectCardGroup } from "@/components/group/Project";
 import { ASSETS } from "@/data";
-import Line from "@/components/ui/Line";
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { Header } from "@/components/font-style/Header";
-import Line from "@/components/ui/Line";
+import Line from "@/components/ui/line";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { motion } from "framer-motion";
 import DesktopScreen from "@/components/screen/DesktopScreen";
