@@ -11,7 +11,7 @@ export const workExperienceData: ExperienceData[] = [
     company: "Blendata (Spin-off from G-Able Pub Co., Ltd)",
     duration: "Nov 2025 - Feb 2026",
     title: "UXUI Designer (Intern)",
-    body: "Gained experience in Data Product workflows, conducting research to identify solutions and improve each feature. Redesigned assigned features and delivered them to the Developer team for implementation.",
+    body: "Gained experience in Data Product workflows, conducting research to identify solutions and improve each feature. Redesigned assigned features and standardized UI using the design system across the product.",
     logo: "/images/logo/work/blendata_logo.png",
   },
   {
