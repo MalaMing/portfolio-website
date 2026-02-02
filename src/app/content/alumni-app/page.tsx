@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import AlumniScreen from "@/components/content/projects/csas/ScreenGroup";
+import AlumniScreen from "@/components/content/projects/alumni/ScreenGroup";
 import { ASSETS } from "@/data";
 
 export default function AlumniAppContent() {
