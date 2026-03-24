@@ -45,14 +45,14 @@ export default function SignLanguageAppContent() {
                     viewport={{ once: false }}
                     className="flex flex-col gap-8"
                 >
-                    <SubHeader text="UI Components" className="md:text-left md:text-2xl text-center" />
+                    <SubHeader text="E-Poster" className="md:text-left md:text-2xl text-center" />
                     <div className="flex w-full justify-center">
                         <Image
-                            src={ASSETS.projects.sign_lan.screens(3)}
-                            alt="UI Components"
+                            src={ASSETS.projects.sign_lan.screens(4)}
+                            alt="E-Poster"
                             width={1200}
-                            height={800}
-                            className="w-full h-auto rounded-xl object-contain shadow-md"
+                            height={1200}
+                            className="w-2xl h-auto rounded-xl object-contain shadow-md"
                             loading="lazy"
                         />
                     </div>
@@ -65,18 +65,19 @@ export default function SignLanguageAppContent() {
                     viewport={{ once: false }}
                     className="flex flex-col gap-8"
                 >
-                    <SubHeader text="E-Poster" className="md:text-left md:text-2xl text-center" />
+                    <SubHeader text="UI Components" className="md:text-left md:text-2xl text-center" />
                     <div className="flex w-full justify-center">
                         <Image
-                            src={ASSETS.projects.sign_lan.screens(4)}
-                            alt="E-Poster"
+                            src={ASSETS.projects.sign_lan.screens(7)}
+                            alt="UI Components"
                             width={1200}
-                            height={1200}
+                            height={800}
                             className="w-full h-auto rounded-xl object-contain shadow-md"
                             loading="lazy"
                         />
                     </div>
                 </motion.div>
+
 
                 <div className="mx-auto mt-10">
                     <Button

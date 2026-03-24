@@ -8,36 +8,34 @@ import { Footer } from "@/components/section/footer";
 
 const SFPro = localFont({
   src: [
-
     {
       path: "./font/SF-Pro-Text-Heavy.otf",
       weight: "800",
-      style: "normal;",
-
+      style: "normal",
     },
     {
       path: "./font/SF-Pro-Text-Bold.otf",
       weight: "700",
-      style: "normal;",
-
+      style: "normal",
     },
     {
       path: "./font/SF-Pro-Text-Semibold.otf",
       weight: "600",
-      style: "normal;",
-
+      style: "normal",
     },
     {
       path: "./font/SF-Pro-Text-Medium.otf",
       weight: "500",
-      style: "normal;",
+      style: "normal",
     },
     {
       path: "./font/SF-Pro-Text-Regular.otf",
       weight: "400",
-      style: "normal;",
+      style: "normal",
     },
-  ]
+  ],
+  display: "swap",
+  variable: "--font-sf-pro",
 });
 
 export const metadata: Metadata = {

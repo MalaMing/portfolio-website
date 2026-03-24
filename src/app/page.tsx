@@ -22,13 +22,9 @@ const ProjectCardGroup = dynamic(() => import("@/components/group/Project").then
 export default function Home() {
   return (
     <div className="relative cursor-auto max-md:pt-20">
-      <motion.div
+      <div
         id="home"
         className="flex flex-col gap-6 sm:gap-8 md:gap-10 items-center justify-center pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 md:pb-36 px-4 sm:px-8 md:px-12 lg:px-18"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: false, amount: 0.3 }}
       >
         <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
         <div className="flex flex-col items-center content-center gap-4">
@@ -46,7 +42,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-(--bg-secondary)">
         <div className="max-w-(--breakpoint-xl) mx-auto w-full">
