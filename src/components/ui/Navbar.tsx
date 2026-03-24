@@ -15,12 +15,12 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <nav className="py-3 px-4 sm:py-4 sm:px-6 md:px-12 lg:px-18 bg-[var(--topbar-bg)] shadow-sm border-1 border-t-transparent border-x-transparent border-[var(--topbar-divider-border)] fixed left-0 top-0 z-50 w-full">
+        <nav className="py-3 px-4 sm:py-4 sm:px-6 md:px-12 lg:px-18 bg-(--topbar-bg) shadow-sm border border-t-transparent border-x-transparent border-(--topbar-divider-border) fixed left-0 top-0 z-50 w-full">
             {/* Mobile Menu Button */}
             <div className="md:hidden flex justify-end">
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="text-[var(--topbar-label-state-default)] hover:text-[var(--topbar-label-state-hovered)] transition p-2"
+                    className="text-(--topbar-label-state-default) hover:text-(--topbar-label-state-hovered) transition p-2"
                     aria-label="Toggle menu"
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -33,7 +33,7 @@ export default function Navbar() {
                     <li key={index}>
                         <Link
                             href={link.href}
-                            className="text-[var(--topbar-label-state-default)] hover:text-[var(--topbar-label-state-hovered)] transition"
+                            className="text-(--topbar-label-state-default) hover:text-(--topbar-label-state-hovered) transition"
                         >
                             {link.text}
                         </Link>
@@ -43,13 +43,13 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-[var(--topbar-bg)] border-b border-[var(--topbar-divider-border)] shadow-lg">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-(--topbar-bg) border-b border-(--topbar-divider-border) shadow-lg">
                     <ul className="flex flex-col py-4">
                         {Links.map((link, index) => (
                             <li key={index}>
                                 <Link
                                     href={link.href}
-                                    className="block px-6 py-3 text-base font-normal text-[var(--topbar-label-state-default)] hover:text-[var(--topbar-label-state-hovered)] hover:bg-[var(--color-primary-opacity-level-3)] transition"
+                                    className="block px-6 py-3 text-base font-normal text-(--topbar-label-state-default) hover:text-(--topbar-label-state-hovered) hover:bg-(--color-primary-opacity-level-3) transition"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.text}

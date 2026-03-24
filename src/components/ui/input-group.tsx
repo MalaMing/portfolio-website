@@ -16,7 +16,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "group/input-group relative flex w-full items-center rounded-md shadow-xs transition-[color,box-shadow] outline-none",
         "border",
-        "[border-color:var(--search-state-default-border)]",
+        "border-(--search-state-default-border)",
         "h-9 has-[>textarea]:h-auto",
 
         "has-[>[data-align=inline-start]]:[&>input]:pl-2",
@@ -24,7 +24,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
         "has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>[data-align=block-start]]:[&>input]:pb-3",
         "has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-end]]:[&>input]:pt-3",
 
-        "has-[[data-slot=input-group-control]:focus-visible]:[border-color:var(--search-state-focused-border)]",
+        "has-[[data-slot=input-group-control]:focus-visible]:border-(--search-state-focused-border)",
 
         "has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[[data-slot][aria-invalid=true]]:border-destructive dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40",
 
@@ -36,7 +36,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 const inputGroupAddonVariants = cva(
-  "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&>svg:not([class*='size-'])]:size-4 [&>kbd]:rounded-[calc(var(--radius)-5px)] group-data-[disabled=true]/input-group:opacity-50 [color:var(--search-shared-color-icon)] group-has-[[data-slot=input-group-control]:focus-visible]/input-group:[color:var(--search-shared-color-icon)]",
+  "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&>svg:not([class*='size-'])]:size-4 [&>kbd]:rounded-[calc(var(--radius)-5px)] group-data-[disabled=true]/input-group:opacity-50 text-(--search-shared-color-icon) group-has-[[data-slot=input-group-control]:focus-visible]/input-group:text-(--search-shared-color-icon)",
   {
     variants: {
       align: {
@@ -136,9 +136,9 @@ function InputGroupInput({
       data-slot="input-group-control"
       className={cn(
         "flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent",
-        "[&::placeholder]:[color:var(--search-state-default-label)]",
-        "focus-visible:[&::placeholder]:[color:var(--search-state-focused-label)]",
-        "[color:var(--search-state-focused-typing_word)]",
+        "placeholder:text-(--search-state-default-label)",
+        "focus-visible:placeholder:text-(--search-state-focused-label)",
+        "text-(--search-state-focused-typing_word)",
         className
       )}
       style={{

@@ -10,7 +10,7 @@ import { SubHeader } from "@/components/font-style/SubHeader";
 import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ASSETS } from "@/data";
 
 export default function SCBAppContent() {

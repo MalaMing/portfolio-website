@@ -17,6 +17,13 @@ export const ASSETS = {
   },
 
   projects: {
+      sign_lan: {
+      cover: "/images/projects/sign_lan/cover.png",
+      coverPage: "/images/projects/sign_lan/cover-page.png",
+      logo: "/images/projects/sign_lan/logo.png",
+      gradient: "/images/projects/sign_lan/gradient.svg",
+      screens: (index: number) => `/images/projects/sign_lan/screen/${index}.png`,
+      },
     kanok: {
       cover: "/images/projects/kanok/cover.png",
       coverPage: "/images/projects/kanok/cover-page.png",

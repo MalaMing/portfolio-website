@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface TabsItemProps {
   icon: string;
@@ -16,7 +16,7 @@ export function TabsItem({ icon, label }: TabsItemProps) {
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       <span className={icon} style={{ width: "52px", height: "52px", color: "var(--icon-primary)" }}></span>
-      <p className="text-base font-normal text-[var(--shared-label-primary)]">{label}</p>
+      <p className="text-base font-normal text-(--shared-label-primary)">{label}</p>
     </motion.div>
   );
 }

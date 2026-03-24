@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { TabsItem } from "../content/TabsContent";
 
@@ -52,20 +52,20 @@ export function TabsSection() {
     <div className="flex w-full justify-center">
       <div className="w-full space-y-12 md:space-y-24 ">
         <nav className="flex flex-row justify-center">
-          <div className="bg-[var(--tabs-shared-bg)] rounded-[var(--tabs-shared-radius)] border border-[var(--tabs-shared-border)] p-0.5 relative flex">
+          <div className="bg-(--tabs-shared-bg) rounded-(--tabs-shared-radius) border border-(--tabs-shared-border) p-0.5 relative flex">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative rounded-[var(--tabs-active-shared-radius)] text-sm md:text-base font-medium px-4 py-2
+                className={`relative rounded-(--tabs-active-shared-radius) text-sm md:text-base font-medium px-4 py-2
                   ${selectedTab.id === tab.id
-                    ? 'text-[var(--tabs-active-state-default-label)]'
-                    : 'text-[var(--tabs-normal-state-default-label)] hover:text-[var(--tabs-normal-state-hovered-label)]'
+                    ? 'text-(--tabs-active-state-default-label)'
+                    : 'text-(--tabs-normal-state-default-label) hover:text-(--tabs-normal-state-hovered-label)'
                   }`}
               >
                 {selectedTab.id === tab.id && (
                   <motion.div
-                    className="absolute inset-0 bg-[var(--tabs-active-state-default-bg)] rounded-[var(--tabs-active-shared-radius)]"
+                    className="absolute inset-0 bg-(--tabs-active-state-default-bg) rounded-(--tabs-active-shared-radius)"
                     layoutId="active"
                     transition={{
                       type: "spring",
@@ -87,7 +87,7 @@ export function TabsSection() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full grid grid-cols-3 gap-14 max-w-[1040px] mx-auto"
+            className="w-full grid grid-cols-3 gap-14 max-w-260 mx-auto"
           >
             {selectedTab.content.map((item, index) => (
               <TabsItem key={index} icon={item.icon} label={item.label} />

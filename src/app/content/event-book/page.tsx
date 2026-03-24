@@ -7,7 +7,7 @@ import { Header } from "@/components/font-style/Header";
 import { SubHeader } from "@/components/font-style/SubHeader";
 import Line from "@/components/ui/line-divider";
 import ContentTemplate from "@/components/section/ContentTemplate";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import EventBookScreen from "@/components/content/projects/event-book/ScreenGroup";
 import { ASSETS } from "@/data";
 

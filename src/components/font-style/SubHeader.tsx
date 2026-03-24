@@ -1,9 +1,9 @@
 "use client";
 
-export function SubHeader({ text }: { text: string }) {
+export function SubHeader({ text, className }: { text: string; className?: string } ) {
     return (
         <header>
-            <h2 className="text-xl sm:text-3xl font-bold text-[var(--shared-label-primary)]">{text}</h2>
+            <h2 className={`text-xl sm:text-3xl font-bold text-(--shared-label-primary) ${className || ''}`}>{text}</h2>
         </header>
     );
 }

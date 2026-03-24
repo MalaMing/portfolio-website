@@ -10,7 +10,7 @@ import DesktopScreen from "@/components/screen/DesktopScreen";
 import MobileImage from "@/components/screen/MobileImage";
 import MobileScreen from "@/components/screen/MobileScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import POSScreen from "@/components/content/projects/pos/ScreenGroup";
 import { ASSETS } from "@/data";
 

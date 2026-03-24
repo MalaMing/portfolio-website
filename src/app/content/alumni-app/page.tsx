@@ -5,7 +5,7 @@ import { BodyText } from "@/components/font-style/Body";
 import { Header } from "@/components/font-style/Header";
 import Line from "@/components/ui/line-divider";
 import ContentTemplate from "@/components/section/ContentTemplate";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import { Icon } from "@iconify/react";
 import AlumniScreen from "@/components/content/projects/alumni/ScreenGroup";

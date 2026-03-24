@@ -1,21 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import { Header } from "@/components/font-style/Header";
 import { NeonHeader } from "@/components/font-style/NeonHeader";
 import NeonText from "@/components/font-style/NeonText";
 import { SubHeader } from "@/components/font-style/SubHeader";
-import { UXUIGroup } from "@/components/group/UXUI-group";
-import { EducationExperience } from "@/components/section/EducationExperience";
-import { WorkExperience } from "@/components/section/WorkExperience";
-import { TabsSection } from "@/components/group/TabsContent";
 import Image from "next/image";
 import { HeadeSecondary } from "@/components/font-style/Header-Secondary";
 import { BodyTextSecondary } from "@/components/font-style/Body-Secondary";
-import { ProjectCardGroup } from "@/components/group/Project";
 import { ASSETS } from "@/data";
+
+const UXUIGroup = dynamic(() => import("@/components/group/UXUI-group").then((module) => module.UXUIGroup));
+const EducationExperience = dynamic(() => import("@/components/section/EducationExperience").then((module) => module.EducationExperience));
+const WorkExperience = dynamic(() => import("@/components/section/WorkExperience").then((module) => module.WorkExperience));
+const TabsSection = dynamic(() => import("@/components/group/TabsContent").then((module) => module.TabsSection));
+const ProjectCardGroup = dynamic(() => import("@/components/group/Project").then((module) => module.ProjectCardGroup));
 
 export default function Home() {
   return (
@@ -30,10 +32,10 @@ export default function Home() {
       >
         <NeonHeader firstText="Hello, I'm" lastText="Phunyisa" />
         <div className="flex flex-col items-center content-center gap-4">
-          <div className="relative flex flex-col md:w-[470px] md:h-[470px] w-[250px] h-[250px]">
-            <Image src={ASSETS.profile.image} fill alt="" draggable="false" />
+          <div className="relative flex flex-col md:w-117.5 md:h-117.5 w-62.5 h-62.5">
+            <Image src={ASSETS.profile.image} fill alt="" draggable="false" priority sizes="(max-width: 768px) 250px, 470px" />
           </div>
-          <div className="flex flex-col items-center justify-center gap-10 max-w-[760px]">
+          <div className="flex flex-col items-center justify-center gap-10 max-w-190">
             <BodyText text="Passionate about UI, front-end development, and turning AI & Big Data into user-centered experiences" />
             <div className="flex flex-col items-center justify-center gap-12">
               <NeonText text="let's get intouch" />
@@ -46,8 +48,8 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-[var(--bg-secondary)]">
-        <div className="max-w-screen-xl mx-auto w-full">
+      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-(--bg-secondary)">
+        <div className="max-w-(--breakpoint-xl) mx-auto w-full">
           <motion.div
             id="projects"
             className="flex flex-col gap-18 w-full"
@@ -86,32 +88,32 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <p className="max-w-[600px]">
-            <span className="text-[var(--shared-label-primary)] font-semibold">
+          <p className="max-w-150">
+            <span className="text-(--shared-label-primary) font-semibold">
               "I love creating designs that are easy to use and friendly for everyone.
             </span>
-            <span className="text-[var(--shared-label-secondary)] font-medium">
+            <span className="text-(--shared-label-secondary) font-medium">
               {" "}My interest started when I worked on
             </span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> UI Design</span>
-            <span className="text-[var(--shared-label-secondary)] font-medium"> for projects and</span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> front-end development.</span>
-            <span className="text-[var(--shared-label-secondary)] font-medium">
+            <span className="text-(--shared-label-primary) font-semibold"> UI Design</span>
+            <span className="text-(--shared-label-secondary) font-medium"> for projects and</span>
+            <span className="text-(--shared-label-primary) font-semibold"> front-end development.</span>
+            <span className="text-(--shared-label-secondary) font-medium">
               {" "}It helped me see how small details come together to create the bigger picture and how they impact the
             </span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> user experience."</span>
+            <span className="text-(--shared-label-primary) font-semibold"> user experience."</span>
           </p>
-          <p className="max-w-[600px]">
-            <span className="text-[var(--shared-label-secondary)] font-medium">"I’ve learned</span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> TypeScript, JavaScript, and CSS/HTML</span>
-            <span className="text-[var(--shared-label-secondary)] font-medium">
+          <p className="max-w-150">
+            <span className="text-(--shared-label-secondary) font-medium">"I’ve learned</span>
+            <span className="text-(--shared-label-primary) font-semibold"> TypeScript, JavaScript, and CSS/HTML</span>
+            <span className="text-(--shared-label-secondary) font-medium">
               {" "}to make my designs work for users. I’ve also worked with
             </span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> Java for back-end development.</span>
-            <span className="text-[var(--shared-label-secondary)] font-medium"> My knowledge in</span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> UX/UI design</span>
-            <span className="text-[var(--shared-label-secondary)] font-medium"> helps me improve my</span>
-            <span className="text-[var(--shared-label-primary)] font-semibold"> front-end skills."</span>
+            <span className="text-(--shared-label-primary) font-semibold"> Java for back-end development.</span>
+            <span className="text-(--shared-label-secondary) font-medium"> My knowledge in</span>
+            <span className="text-(--shared-label-primary) font-semibold"> UX/UI design</span>
+            <span className="text-(--shared-label-secondary) font-medium"> helps me improve my</span>
+            <span className="text-(--shared-label-primary) font-semibold"> front-end skills."</span>
           </p>
         </motion.div>
 
@@ -128,7 +130,7 @@ export default function Home() {
         <div
           role="separator"
           aria-orientation="horizontal"
-          className="w-full h-[var(--border-width-0_5)] bg-gradient-to-tl from-white/20 to-white my-6"
+          className="w-full h-(--border-width-0_5) bg-linear-to-tl from-white/20 to-white my-6"
         />
 
         <motion.div
@@ -173,7 +175,7 @@ export default function Home() {
 
 
       <div className="flex flex-col md:px-18 md:py-52 py-24 px-8">
-        <p className="md:text-xl text-lg text-[var(--shared-label-primary)] font-normal text-center">“Through these projects,
+        <p className="md:text-xl text-lg text-(--shared-label-primary) font-normal text-center">“Through these projects,
           I gained hands-on experience in UX/UI design and development, focusing on user needs, teamwork, and clear communication. This portfolio highlights my user-centered design skills and eagerness to grow through future creative projects.”</p>
       </div>
     </div>

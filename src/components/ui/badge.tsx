@@ -17,10 +17,10 @@ export function Badge({
 
 }) {
     const classMap = {
-        primary: "bg-transparent text-[var(--badge-color-label)] border-[var(--badge-color-border)]",
-        primaryIcon: "text-[var(--badge-color-label)]",
-        secondary: "bg-[var(--chip-bg)] text-[var(--chip-label)] border-[var(--chip-border)]",
-        secondaryIcon: "text-[var(--chip-icon)]",
+        primary: "bg-transparent text-(--badge-color-label) border-(--badge-color-border)",
+        primaryIcon: "text-(--badge-color-label)",
+        secondary: "bg-(--chip-bg) text-(--chip-label) border-(--chip-border)",
+        secondaryIcon: "text-(--chip-icon)",
     };
     const sizeMap = {
         xs: "text-xs font-normal",
@@ -28,7 +28,7 @@ export function Badge({
     };
 
     return (
-        <div className={`shadow-white/40 rounded-[var(--badge-border-radius)] border-[0.5px] flex flex-row gap-1.5 px-2.5 py-0.5 ${classMap[type]} ${sizeMap[size]}`} onClick={onClick}>
+        <div className={`shadow-white/40 rounded-(--badge-border-radius) border-[0.5px] flex flex-row gap-1.5 px-2.5 py-0.5 ${classMap[type]} ${sizeMap[size]}`} onClick={onClick}>
             {iconLeft && (
                 <span className={`material-symbols-rounded `}>
                     {iconLeft}

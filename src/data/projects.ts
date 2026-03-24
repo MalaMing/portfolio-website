@@ -1,6 +1,21 @@
 import { ProjectCardType } from "@/interface/projectCardType";
 
 export const projectsData: ProjectCardType[] = [
+    {
+    title: "Thai Text to Thai Sign Language Translation",
+    description:
+      "This senior project develops an AI prototype to translate Thai text and speech into Thai Sign Language (TSL).",
+    coverImage: "/images/projects/sign_lan/cover.png",
+    technologies: [
+      "Figma",
+      "UX/UI",
+      "Next.js",
+      "Health",
+      "Development",
+    ],
+    gradientColor: "/images/projects/sign_lan/gradient.svg",
+    link: "/content/sign-language-app",
+  },
   {
     title: "Tailor Management System Project",
     description:

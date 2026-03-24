@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { SlideButton } from "../ui/SlideButton";
 import { projectsData } from "@/data";
 import { ProjectCard } from "../ui/Project-Card";

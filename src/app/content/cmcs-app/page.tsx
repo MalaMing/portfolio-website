@@ -8,7 +8,7 @@ import NeonText from "@/components/font-style/NeonText";
 import { SubHeader } from "@/components/font-style/SubHeader";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Icon } from "@iconify/react";
 import { Badge } from "@/components/ui/badge";
 import CMCSScreen from "@/components/content/projects/alumni/ScreenGroup";
@@ -50,7 +50,7 @@ export default function CMCSAppContent() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="flex flex-col gap-6 items-center justify-center md:w-[600px] w-full  mx-auto"
+                    className="flex flex-col gap-6 items-center justify-center md:w-150 w-full  mx-auto"
                 >
                     <NeonText text="UX/UI Design Process" />
 

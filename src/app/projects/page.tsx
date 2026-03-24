@@ -20,13 +20,13 @@ export default function ProjectsPage() {
     return (
         <motion.div
             id="projects"
-            className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col gap-8 sm:gap-10 md:gap-12 min-h-screen bg-[var(--bg-secondary)]"
+            className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col gap-8 sm:gap-10 md:gap-12 min-h-screen bg-(--bg-secondary)"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.div
-                className="flex flex-col gap-8 sm:gap-10 md:gap-12 mx-auto w-full max-w-screen-xl px-4 sm:px-8 md:px-12 lg:px-18 py-16 sm:py-18 md:py-22"
+                className="flex flex-col gap-8 sm:gap-10 md:gap-12 mx-auto w-full max-w-(--breakpoint-xl) px-4 sm:px-8 md:px-12 lg:px-18 py-16 sm:py-18 md:py-22"
             >
                 <div className="flex flex-col items-start w-full gap-4 sm:gap-6">
                     <HeadeSecondary text={"Projects"} />

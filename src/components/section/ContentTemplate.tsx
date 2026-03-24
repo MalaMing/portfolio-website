@@ -40,7 +40,7 @@ export default function ContentTemplate({
     return (
         <main className="min-h-screen">
             <motion.section
-                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[460px] flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 z-10"
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] h-[460px] flex items-center justify-center bg-linear-to-b from-slate-900 to-slate-800 z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -54,7 +54,7 @@ export default function ContentTemplate({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-                <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center gap-8">
+                <div className="w-full max-w-(--breakpoint-xl) mx-auto flex flex-col items-center gap-8">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -106,7 +106,7 @@ export default function ContentTemplate({
                 </motion.div>
                 </div>
                 <motion.div
-                    className="pt-20"
+                    className="pt-20 "
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
@@ -125,7 +125,7 @@ export default function ContentTemplate({
             </motion.div>
 
             <motion.div
-                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col bg-[var(--bg-secondary)] gap-8 md:gap-10 py-18 align-middle">
+                className="w-screen relative left-1/2 right-1/2 -mx-[50vw] flex flex-col bg-(--bg-secondary) gap-8 md:gap-10 py-18 align-middle">
                 <div className="flex flex-col gap-8 md:gap-10 md:px-18 px-8 py-24 align-middle w-full" >
                     <div className="flex flex-col gap-5 items-center md:items-start">
                         <HeadeSecondary text={"Projects"} />

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BodyText } from "@/components/font-style/Body";
 import ContentTemplate from "@/components/section/ContentTemplate";
 import DesktopImage from "@/components/screen/DesktopImage";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ASSETS } from "@/data";
 
 export default function ShopLandingAppContent() {

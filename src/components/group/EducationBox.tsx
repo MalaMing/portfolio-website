@@ -1,6 +1,7 @@
 "use client";
 
-import { educationExperienceData, ASSETS } from "@/data";
+import Image from "next/image";
+import { educationExperienceData } from "@/data";
 
 export default function EducationBox() {
     const education = educationExperienceData[0];
@@ -9,7 +10,15 @@ export default function EducationBox() {
         <div className="flex flex-col">
             <div className="flex flex-row justify-between items-center mb-[20px]">
                 <div className="text-black-theme-white flex flex-row gap-[10px] items-center">
-                    <img className="w-[46px] h-[55px]" src={education.logo} alt={education.company} />
+                    <Image
+                        className="w-[46px] h-[55px]"
+                        src={education.logo}
+                        alt={education.company}
+                        width={46}
+                        height={55}
+                        loading="lazy"
+                        sizes="46px"
+                    />
                     <p className="text-lg font-bold">{education.company}</p>
                 </div>
                 <div className="text-black-theme-whereGrey text-base font-semibold">{education.duration}</div>

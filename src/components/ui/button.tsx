@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 export function Button({
     className = "",
@@ -17,10 +17,10 @@ export function Button({
 }) {
     const classMap = {
         primary: {
-            default: "bg-[var(--button-primary-state-default)]",
-            hovered: "hover:bg-[var(--button-primary-state-hovered)]",
-            iconColorDefault: "text-[var(--button-primary-shared-icon)]",
-            textColorDefault: "text-[var(--button-primary-shared-text)]",
+            default: "bg-(--button-primary-state-default)",
+            hovered: "hover:bg-(--button-primary-state-hovered)",
+            iconColorDefault: "text-(--button-primary-shared-icon)",
+            textColorDefault: "text-(--button-primary-shared-text)",
         },
         primaryBorder: {
             default: "bg-transparent border border-[#FFFFFF] text-[#FFFFFF]",
@@ -35,11 +35,11 @@ export function Button({
         },
         special: {
             default:
-                "bg-gradient-to-r from-[var(--button-special-state-default-level-1)] via-[var(--button-special-state-default-level-2)] to-[var(--button-special-state-default-level-3)]",
+                "bg-linear-to-r from-(--button-special-state-default-level-1) via-(--button-special-state-default-level-2) to-(--button-special-state-default-level-3)",
             hovered:
-                "bg-gradient-to-r from-[var(--button-special-state-hovered-level-1)] via-[var(--button-special-state-hovered-level-2)] to-[var(--button-special-state-hovered-level-3)] hover:opacity-90",
-            iconColorDefault: "text-[var(--button-special-shared-icon)]",
-            textColorDefault: "text-[var(--button-special-shared-text)]",
+                "bg-linear-to-r from-(--button-special-state-hovered-level-1) via-(--button-special-state-hovered-level-2) to-(--button-special-state-hovered-level-3) hover:opacity-90",
+            iconColorDefault: "text-(--button-special-shared-icon)",
+            textColorDefault: "text-(--button-special-shared-text)",
         },
     }
 
@@ -56,7 +56,7 @@ export function Button({
                 damping: 20,
             }}
             className={[
-                "w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-2.5 text-base sm:text-lg font-medium rounded-[var(--button-shared-radius)] inline-flex items-center justify-center gap-2 transition-colors duration-200",
+                "w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-2.5 text-base sm:text-lg font-medium rounded-(--button-shared-radius) inline-flex items-center justify-center gap-2 transition-colors duration-200",
                 classMap[type].iconColorDefault,
                 "iconColorHovered" in classMap[type]
                     ? classMap[type].iconColorHovered

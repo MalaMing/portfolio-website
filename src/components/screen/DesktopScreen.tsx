@@ -26,8 +26,11 @@ export default function DesktopScreen({ videoSrc }: DesktopScreenProps) {
     return (
         <iframe
             src={getEmbedUrl(videoSrc || '')}
-            className="w-full h-[180px] md:h-[230px] lg:h-[280px] xl:h-[330px] 2xl:h-[380px] 3xl:h-[430px] 4xl:h-[480px] rounded-lg"
+            title="Project demo video"
+            className="w-full h-45 md:h-57.5 lg:h-70 xl:h-82.5 2xl:h-95 3xl:h-[430px] 4xl:h-[480px] rounded-lg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
         >
         </iframe>

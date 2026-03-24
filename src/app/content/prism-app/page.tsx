@@ -6,7 +6,7 @@ import { Header } from "@/components/font-style/Header";
 import { SubHeader } from "@/components/font-style/SubHeader";
 import DesktopScreen from "@/components/screen/DesktopScreen";
 import ContentTemplate from "@/components/section/ContentTemplate";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Icon } from "@iconify/react";
 import PRISMScreen from "@/components/content/projects/prism/ScreenGroup";
 import { ASSETS } from "@/data";
