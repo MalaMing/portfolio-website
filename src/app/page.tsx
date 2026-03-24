@@ -78,7 +78,7 @@ export default function Home() {
         <Header text="About" />
 
         <motion.div
-          className="flex flex-row text-xl gap-2 max-md:text-base text-start flex-wrap w-full justify-between"
+          className="flex flex-row text-xl gap-2 max-md:text-base text-start flex-wrap w-full justify-between md:justify-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
