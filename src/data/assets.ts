@@ -1,6 +1,6 @@
 export const ASSETS = {
   profile: {
-    image: "/images/profile.png",
+    image: "/images/profile.webp",
   },
 
   logos: {
