@@ -28,7 +28,9 @@ const tabs = [
       { icon: "icon-[mdi--react]", label: "React.js" },
       { icon: "icon-[ri--java-fill]", label: "JavaFX" },
       { icon: "icon-[lineicons--go]", label: "GO Fiber" },
-      { icon: "icon-[simple-icons--spring]", label: "Spring Boot" }
+      { icon: "icon-[simple-icons--spring]", label: "Spring Boot" },
+      { icon: "icon-[mdi--tailwind]", label: "TailwindCSS" }
+
     ]
   },
   {
