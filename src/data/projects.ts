@@ -2,21 +2,24 @@ import { ProjectCardType } from "@/interface/projectCardType";
 
 export const projectsData: ProjectCardType[] = [
     {
-    title: "Thai Text to Thai Sign Language Translation",
+    title: "SCB Mobile Banking Home Screen-Redesign",
     description:
-      "This senior project develops an AI prototype to translate Thai text and speech into Thai Sign Language (TSL).",
-    coverImage: "/images/projects/sign_lan/cover.png",
-    technologies: [
-      "Figma",
-      "UX/UI",
-      "Next.js",
-      "Health",
-      "Development",
-    ],
-    gradientColor: "/images/projects/sign_lan/gradient.svg",
-    link: "/content/sign-language-app",
+      "Home screen design for quick balance check, scan to pay, and everyday actions.",
+    coverImage: "/images/projects/scb_re/cover.png",
+    technologies: ["Figma", "UX/UI", "Mobile Banking"],
+    gradientColor: "/images/projects/scb_re/gradient.svg",
+    link: "/content/scb-re",
   },
   {
+    title: "PRISM: Smart Inventory & Sales Forecast",
+    description:
+      "Business management app for unified stock & sales tracking with AI forecasting.",
+    coverImage: "/images/projects/prism/cover.png",
+    technologies: ["Figma", "UX/UI", "Prototype", "Business Management"],
+    gradientColor: "/images/projects/prism/gradient.svg",
+    link: "/content/prism-app",
+  },
+    {
     title: "Tailor Management System Project",
     description:
       "Developed a custom tailoring shop management system with order tracking and customer to place their order.",
@@ -35,13 +38,19 @@ export const projectsData: ProjectCardType[] = [
     link: "/content/kanok-app",
   },
   {
-    title: "PRISM: Smart Inventory & Sales Forecast",
+    title: "Thai Text to Thai Sign Language Translation",
     description:
-      "Business management app for unified stock & sales tracking with AI forecasting.",
-    coverImage: "/images/projects/prism/cover.png",
-    technologies: ["Figma", "UX/UI", "Prototype", "Business Management"],
-    gradientColor: "/images/projects/prism/gradient.svg",
-    link: "/content/prism-app",
+      "This senior project develops an AI prototype to translate Thai text and speech into Thai Sign Language (TSL).",
+    coverImage: "/images/projects/sign_lan/cover.png",
+    technologies: [
+      "Figma",
+      "UX/UI",
+      "Next.js",
+      "Health",
+      "Development",
+    ],
+    gradientColor: "/images/projects/sign_lan/gradient.svg",
+    link: "/content/sign-language-app",
   },
   {
     title: "Party Food Calculator",
@@ -51,15 +60,6 @@ export const projectsData: ProjectCardType[] = [
     technologies: ["Figma", "UX/UI", "Next.js", "Food", "Development"],
     gradientColor: "/images/projects/party_cal/gradient.svg",
     link: "/content/party-cal",
-  },
-  {
-    title: "SCB Mobile Banking Home Screen-Redesign",
-    description:
-      "Home screen design for quick balance check, scan to pay, and everyday actions.",
-    coverImage: "/images/projects/scb_re/cover.png",
-    technologies: ["Figma", "UX/UI", "Mobile Banking"],
-    gradientColor: "/images/projects/scb_re/gradient.svg",
-    link: "/content/scb-re",
   },
   {
     title: "CMCS: Chinese Management Clinic System Project",
